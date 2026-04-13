@@ -20,11 +20,9 @@
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/scopedcss/Components/Layout/ReconnectModal.razor.rz.scp.css
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/scopedcss/bundle/Sh.Web.styles.css
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/scopedcss/projectbundle/Sh.Web.bundle.scp.css
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/5uc9i77l87-{0}-khy4lop6wu-khy4lop6wu.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/2mk94ymkx2-{0}-bqjiyaj88i-bqjiyaj88i.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/bq4ok3s8am-{0}-c2jlpeoesf-c2jlpeoesf.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/bs5iuqvafa-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -72,8 +70,6 @@
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/90pgu5agmw-{0}-abdmv1u4y3-abdmv1u4y3.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/lxwkdc54tb-{0}-b9228eflpl-b9228eflpl.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/gfj13pigtq-{0}-2tj1sjhksk-2tj1sjhksk.gz
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/cl3jksdo6n-{0}-ggkfwk4plx-ggkfwk4plx.gz
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/4azqw68c23-{0}-ggkfwk4plx-ggkfwk4plx.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.build.json
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.development.json
@@ -124,3 +120,6 @@
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/6tikxaat43-{0}-dhhiwbadcb-dhhiwbadcb.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/vhbe5g624p-{0}-lgwd6ghowu-lgwd6ghowu.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/p5fvc8ad4a-{0}-ytq998isao-ytq998isao.gz
+/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/5uc9i77l87-{0}-wwtlhwmfe5-wwtlhwmfe5.gz
+/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/cl3jksdo6n-{0}-6j6lcvcgil-6j6lcvcgil.gz
+/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/4azqw68c23-{0}-6j6lcvcgil-6j6lcvcgil.gz

@@ -72,3 +72,6 @@
 /home/runner/work/sh/sh/Sh.Api/obj/Debug/net10.0/Sh.Api.pdb
 /home/runner/work/sh/sh/Sh.Api/obj/Debug/net10.0/Sh.Api.genruntimeconfig.cache
 /home/runner/work/sh/sh/Sh.Api/obj/Debug/net10.0/ref/Sh.Api.dll
+/home/runner/work/sh/sh/Sh.Api/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/home/runner/work/sh/sh/Sh.Api/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/home/runner/work/sh/sh/Sh.Api/obj/Debug/net10.0/Sh.Api.MvcApplicationPartsAssemblyInfo.cs
