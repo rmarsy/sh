@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main background with gradient -->
+  <rect x="0" y="0" width="800" height="300" rx="20" ry="20" fill="#1e293b" />
+  
+  <!-- Roulette frame with gold border -->
+  <rect x="10" y="50" width="780" height="200" rx="15" ry="15" fill="#111827" stroke="#fbbf24" stroke-width="4" />
+  
+  <!-- Roulette items container - this is the visible window -->
+  <rect x="50" y="70" width="700" height="160" rx="10" ry="10" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+  
+  <!-- Item slots (8 visible slots) -->
+  <g id="item-slots">
+    <!-- Slot dividers -->
+    <line x1="137.5" y1="70" x2="137.5" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="225" y1="70" x2="225" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="312.5" y1="70" x2="312.5" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="400" y1="70" x2="400" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="487.5" y1="70" x2="487.5" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="575" y1="70" x2="575" y2="230" stroke="#fbbf24" stroke-width="2" />
+    <line x1="662.5" y1="70" x2="662.5" y2="230" stroke="#fbbf24" stroke-width="2" />
+    
+    <!-- Slot backgrounds alternating colors -->
+    <rect x="50" y="70" width="87.5" height="160" fill="#2d3748" opacity="0.8" />
+    <rect x="137.5" y="70" width="87.5" height="160" fill="#1e293b" opacity="0.8" />
+    <rect x="225" y="70" width="87.5" height="160" fill="#2d3748" opacity="0.8" />
+    <rect x="312.5" y="70" width="87.5" height="160" fill="#1e293b" opacity="0.8" />
+    <rect x="400" y="70" width="87.5" height="160" fill="#2d3748" opacity="0.8" />
+    <rect x="487.5" y="70" width="87.5" height="160" fill="#1e293b" opacity="0.8" />
+    <rect x="575" y="70" width="87.5" height="160" fill="#2d3748" opacity="0.8" />
+    <rect x="662.5" y="70" width="87.5" height="160" fill="#1e293b" opacity="0.8" />
+    
+    <!-- Sample item squares (placeholders for actual item images) -->
+    <!-- Slot 1 -->
+    <rect x="68.75" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="93.75" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 1</text>
+    
+    <!-- Slot 2 -->
+    <rect x="156.25" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="181.25" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 2</text>
+    
+    <!-- Slot 3 -->
+    <rect x="243.75" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="268.75" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 3</text>
+    
+    <!-- Slot 4 -->
+    <rect x="331.25" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="356.25" y="130" font-family="Arial" font-size="12" fill="#ef4444" text-anchor="middle" font-weight="bold">Rare</text>
+    
+    <!-- Slot 5 - Highlighted center slot -->
+    <rect x="418.75" y="90" width="50" height="70" rx="5" ry="5" fill="#1e293b" stroke="#ef4444" stroke-width="3" />
+    <text x="443.75" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 5</text>
+    
+    <!-- Slot 6 -->
+    <rect x="506.25" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="531.25" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 6</text>
+    
+    <!-- Slot 7 -->
+    <rect x="593.75" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="618.75" y="130" font-family="Arial" font-size="12" fill="#ef4444" text-anchor="middle" font-weight="bold">Rare</text>
+    
+    <!-- Slot 8 -->
+    <rect x="681.25" y="100" width="50" height="50" rx="5" ry="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2" />
+    <text x="706.25" y="130" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle">Item 8</text>
+  </g>
+  
+  <!-- Center indicator line (shows where prize is won) -->
+  <rect x="398" y="50" width="4" height="200" fill="#ef4444" />
+  
+  <!-- Top banner -->
+  <rect x="10" y="10" width="780" height="30" rx="10" ry="10" fill="#fbbf24" />
+  <text x="400" y="32" font-family="Arial" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">ROULETTE REWARDS</text>
+  
+  <!-- Bottom decorative elements -->
+  <circle cx="100" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="200" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="300" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="400" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="500" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="600" cy="265" r="10" fill="#fbbf24" />
+  <circle cx="700" cy="265" r="10" fill="#fbbf24" />
+</svg>

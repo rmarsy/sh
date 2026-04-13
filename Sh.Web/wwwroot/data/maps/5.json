@@ -1,0 +1,2624 @@
+{
+  "mapSize": 304,
+  "mapHeight": "/////////////////////////////////////////////////////////////////////////////wHw////////////////////////////////////////////////AfD///////////////////////////////////////////////8B8P//////////////////////////8////////////////////wHg//////////////////////////93/v//////////////////AeD//////////////////////////3f+//////////////////8B4P//////////////////////////d/7//////////////////wHg//////////////////////////8B/P//////////////////AeD//////////////////////wfwfwDwfwD///////////////8B4P//////////////////////B3BwAHBwAP///////////////wHg//////////////////////8HYDAAICAA////////////////AeD//////////////////////wcAAAAAAAD///////////////8B4P//////////////////////BwAAAAAAAP///////////////wHg//////////////////////8HAAAAAAAA////////////////AeD//////////////////////wcAAAAAAAD///////////////8B4P//////////////////////BwAAAAAAAP///////////////wHg//////////////////////8HAAAAAAAA////////////////AeD//////////////////////wcAAAAAAAD///////////////8B4P//////////////////////BwAAAAAAAP///////////////wHg//////////////////////8HAAAAAAAA////////////////AeD//////////////////////w8AAAAAAID///////////////8h4P//////////////////////DwAAAAAAgP///////////////wHg//////////////////////8HAAAAAACA////////////////AeD//////////////////////wcAAAAAAAD///////////////8B4P//////////////////////BwAAAAAAAP///////////////wPw//////////////////////8HAAAAAAAA////////////////A/D//////////////////////wcAAAAAAAD///////////////8D8P/5////////////////////BwAAAAAAAP///////////////wPwx/n///////////////////8PAAAAAAAA//////////8fAAD8A+BHQBD+/////////////////w8AAAAAAID//////////w8AAIABYAAAAPz/////////////////DwAAAAAAgP//////////BwAAAAAAAAAA+P////////////////8HAAAAAAAA//////////8HAAAAAAAAAAD4/////////////////wcAAAAAAAD//////////wcAAAAAAAAAAPj/////////////////BwAAAAAAAP//////////BwAAAAAAAAAA+P////////////////8HAAAAAAAA//////////8HAAAAAAAAAAD4/////////////////wcAAAAAAAD//////////wcAAAAAAAAAAPj/////////////////DwAAAAAAAP//////////BwAAAAAAAAAA+P////////////////8PAAAAAACA//////////8HAAAAAAAAAAD4/////////////////w8AAAAAAID//////////wcAAAAAAAAAAPj/////////////////DwAAAAAAgP//////////BwAAAAAAAAAA+P////////////////8HAAAAAAAA//////////8PAAAAAAAAAAD4/////////////////wcAAAAAAAD//////////w8AAAAAAAAAAPj/////////////////BwAAAAAAAP//////////DwAAAAAAAAAA+P////////////////8HABwAAAAO//////////8HAAAAAAAAAAD4/////////////////4cHPgCABx//////////PwAAAAAAAAAAAAD/////////////////////D/////////////8/AAAAAAAAAAAAAP////////////////////8P/////////////z8AAAAAAAAAAAAA/////////////////////w//////////////PwAAAAAAAAAAAAD/////////////////////B/7///////////8/AAAAAAAAAAAAAP////////////////////8H/v///////////z8AAAAAAAAAAAAA/////////////////////wf+/////////////wcAAAAAAAAAAPD/////////////////////B/7/////////////BwAAAAAAAAAA+P////////////////////8H/v////////////8HAAAAAAAAAAD4/////////////////////wf+/////////////wcAAAAAAAAAAPj/////////////////////B/7//+f/////////BwAAAAAAAAAA+P////////////////////8H/v//5/////////8HAAAAAAAAAAD4/////////////////////wf+/////////////wcAAAAAAAAAAPj///////8P////////////B/7/////////////BwAAAAAAAAAAAP///////w////////////8H/v///////////z8AAAAAAAAAAAAA////////D////////////wf+////////////PwAAAAAAAAAAAAD///////8P////////////B/7///////////8/AAAAAAAAAAAAAP////8PAAAAAP7///////8H/v///////////z8AAAAAAAAAAAAA/////wcAAAAA/P///////wf+////////////PwAAAAAAAAAAAAD/////AwAAAAD4////////Af7/////////////BwAAAAAAAAAA+P////8BAAAAAPD///////8B/v////////////8HAAAAAAAAAAD4////fwAAAAAA8P///////wf+////wWDw/////wcAAAAAAAAAAP7///9/AAAAAADA////////B/7///8AAOD/////BwAAAAAAAAAA/v///z8AAAAAAMD///////8H/v//fwAAwP////8HAAAAAAAAAAD4////HwAAAAAAgP///////wf+//9/AADA/////wcAAAAAAAAAAPj///8fAAAAAACA////////B/7//38AAMD/////BwAAAAAAAAAA+P///x8AAAAAAID///////8H/v//fwAAwP////8HAAAAAAAAAAD4////HwAAAAAAgP///////wf+//9/AADA/////wcAAAAAAAAAAPj///8fAAAAAACA////////B/z//38AAMD/////BwAAAAAAAAAA+P///x8AAAAAAID///////8HAAAAMAAAwAMAAAADAAAAAAAAAAD4////HwAAAAAAgP///////wcAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACA////////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID///////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgP///////wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA////////BwAAADAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID/////////////fwAAwP8AAAAHAAAAAAAAAAAYAAAAHAAAAAAAgP////////////9/AADA/////wcAAAAAAAAAAPj///8fAAAAAACA/////////////38AAMD/////BwAAAAAAAAAA+P///x8AAAAAAID/////////////fwAAwP////8HAAAAAAAAAAD4////HwAAAAAAgP////////////9/AADA/////wcAAAAAAAAAAPj///8fAAAAAACA/////////////38AAMD/////BwAAAAAAAAAA+P///x8AAAAAAID/////////////fwAAwP////8fAAAAAAAAAAD8////PwAAAAAAwP//////////////AADg/////x8AAAAAAAAAAP7///9/AAAAAADg//////////////8BAPD/////fwAAAAAAAACA//////8AAAAAAOD/////////////////////////AAAAAAAAAMD//////wEAAAAA8P////////////////////////8AAAAAAAAAwP//////AQAAAAD4/////////////////////////wAAAAAAAADA//////8DAAAAAPz/////////////////////////AACA/38AAMD//////wcAAAAA/v////////////////////////8AAID//wAAwP//////DwAAAAD//////////////////////////wAAgP//AADA/////////wf/////////////////////////////AADw//8DAMD/////////B///////////////////////////////D////z/4//////////8H//////////////////////////////8P/v//P/j//////////wf//////////////////////////////wf+//8/+P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/w//////////////////////////////////////////8H/v//H/D//////////////////////////////////////////wf+//8f8P//////////////////////////////////////////B/7//x/g//////////////////////////////////////////8H/v//P8D//////////////////////////////////////////wf+//9/gP//////////////////////////////////////////B/7//3+A//////////////////////////////////////////8H/v///wD//////////////////////////////////////////wf+////Af//////////////////////////////////////////B/7///8B/v////////////////////////////////////////8H/v///wP8/////////////////////////////////////////wf+////A/z/////////////////////////////////////////B/7///8H8P////////////////////////////////////////8P/v///wfg/////////////////////////////////////////w/+////D4D/////////////////////////////////////////B/7///8fAP7//////////////////////////////////////w8AgP///z8A/P//////////////////////////////////////BwAA/v//fwDw//////////////////////////////////////8DAAD8////AwAAAAAAAAD8/////////////////////////////wEAAPj///8HAAAAAAAAAPj/////////////////////////////AAAA8P///x8AAAAAAAAA8P///////////////////////////38AAADg////fwAAAAAAAADw////////////////////////////PwAAAMD/////AAAAAAAAAOD///////////////////////////8fAAAAgP////8BAAAAAAAAwP///////////////////////////w8AAAAA/////////////x+A////////////////////////////BwAAAAD+////////////PwD///////////////////////////8DAAAAAPz///////////9/AP7//////////////////////////wMAAAAA/P////////////8A/v//////////////////////////AQAAAAD4/////////////wH+//////////////////////////8BAAAAAPj/////////////A/7//////////////////////////wEAAAAA+P////////////8H/v//////////////////////////AQAAAAD4/////////////wf+//////////////////////////8BAAAAAPj/////////////B/7//////////////////////////wEAAAAAeAD8//////////8H/v///////////////////////wEAAAAAAAAAAPD//////////wf+//////////////////////9/AAAAAAAAAAAAwP//////////B/7//////////////////////z8AAAAAAAAAAACA//////////8H/v//////////////////////DwAAAAAAAAAAAAD+/////////wf+//////////////////////8HAAAAAAAAAAAAAPz/////////B/7//////////////////////wEAwAEAAAAAGAAA8P////////8H/v//////////////////////APz/AQAAAAD4/wPA/////////wf+/////////////////////z8A/v8BAAAAAPj/D4D/////////B/7/////////////////////H4D//wEAAAAA+P8fAP////////8H/v////////////////////8f4P//AQAAAAD4/z8A/////////wf+/////////////////////w/w//8BAAAAAPj//wH+////////B/7/////////////////////B/z//wMAAAAA/P//A/z///////8H/v////////////////////8D/v//AwAAAAD8//8H+P///////wf+/////////////////////wH///8HAAAAAP7//wf4////////B/7/////////////////////Af///w8AAAAA////D/j///////8H/v////////////////////+A////HwAAAID///8f8P///////wf+/////////////////////4D///8/AAAAwP///x/g////////B/7///////////////////9/wP///38AAADg////P8D///////8H/v///////////////////z/A/////wAAAPD///9/wP///////wf+////////////////////P+D/////AQAA+P///3+A////////B/7//////////////5////8f8P////8DAAD8/////wD///////8H/v////////+HA8aBg////w/w/////wcAAP7/////Af///////wf+/////////wcAAACA////B/j/////DwAA//////8B////////B/7/////////BwAAAID///8H/P////9/AMD//////wH///////8H/v////////8HAAAAgP///wf8////////////////Af///////wf+/////////wcAAACA////A/7///////////////8B////////B/7/////////BwAAAID///8B/////////////////wH///////8H/v////////8HAAAAwP///wD/////////////////Af///////wf+/////////wcAAADA//9/gP////////////////8B////////B/7/////////BwAAAID//3/AfwD+/////////////wH///////8H/v////////8HAAAAgP//P6B/AP7/////////////Af///////wP+/////////wcAAACA//8f4D8A/P////////////8D////////B/7/////////BwAAAID//wfwPwD8/////////////4P///////8H/v////////8HAAAAgP//Afg/APz/////////////g////////wf+/////////wcAAACA/38A/D8A/P///////////8ODh///////B/7/////////BwAAAID/PwD+PwD8////////////wQEH//////8D/v////////8HAAAAwP8fAP8/APz///////////8AAAD+/////wf+/////////wcAAAAAAADA/z8A/P//////////fwAAAPz/////B///////////BwAAAAAAAOD/PwD8//////////8/AAAA+P////8H/v////////8HAAAAAAAA+P8/APz//////////x8AAADw/////wf+/////////wcAAAAAAAD8/z8A/P//////////DwAAAOD/DwAAAAAAAP//////BwAAAAAAAP//PwD8//////////8HAAAAwP8HAAAAAAAA/v////8HAAAAwAGA//8/APz//////////wMAAACA/wcAAAAAAAD+/////wcAAACA/////z8A/P//////////AQAAAAD/BwAAAAAAAP7/////BwAAAID/////PwD8//////////8AAAAAAP4HAAAAAAAA/v////8HAAAAgP////8/APz/////////fwAAAAAA/AcAAAAAAAD+/////wcAAACA/////z8A/P//////////AAAAAAD8BwAAAwAAAP7/////BwAAAID/////PwD8//////////8AAAAAAP4PAAAAAAAA//////8HAAAAgP////8/APz/////////fwAAAAAA/A8AAAAAAAD//////wcAAACA/////z8A/P////////9/AAAAAAD4DwAAAAAAAP//////BwAAAMD/////PwD8/////////z8AAAAAAPgPAAAAAAAA//////8HAAAAwP////8/APz/////////PwAAAAAA+A8AAAAAAAD//////wcAAACA/////z8A/P////////8/AAAAAAD4DwAAAAAAAP//////BwAAAID/////PwD8/////////z8AAAAAAPgPAAAAAAAA//////8HAAAAgP////8/APz/////////PwAAAAAA+A8AAAAAAAD//////wcAAACA/////z8A/P////////8/AAAAAAD4DwAAAAAAAP//////BwAAAID/////PwD8/////////z8AAAAAAPgPAAAAAAAA//////8HAAAAgP////8/APz/////////PwAAAAAA+A8AAAAAAAD/////////g////////z8A/P////////8/AAAAAAD4DwAAAAAAAP////////+D////////PwD8/////////z8AAAAAAPgPAAAAAAAA/////////4f///////8/APz/////////PwAAAAAA+A8AAAAAAAD/////////A////////z8A/P////////8/AAAAAAD4DwAAAAAAAP////////8D////////fwD+/////////z8AAAAAAPgPAAAAAAAA/////////wP///////9/AP7/////////PwAAAAAA+A8AAAAAAAD/////////A////////38A/v////////9/AAAAAAD8DwAAAAAAAP////////8D////////fwD+//////////8AAAAAAPwPAAAAAAAA/////////wP///////9/AP7//////////wAAAAAA/AcAAAAAAAD+////////A////x8Y/D8A/D8Y+P//////AAAAAAD8BwAAAAQAAP7///////8D////HxgMOAAcOBj4//////8AAAAAAP4HAAAAAAAA/v///////wP///8fGAw4ABw4GPj//////wEAAAAA/wcAAAAAAAD+////////A////x8AAAAAAAAA+P//////AwAAAID/BwAAAAAAAP7///////8D////HwAAAAAAAAD4//////8HAAAAwP8HAAAAAAAA/v///////wP///8fAAAAAAAAAPj//////w8AAADg/wcAAAAAAAD+////////A////x8AAAAAAAAA8P//////HwAAAPD/DwAAAAAAAP////////8D////AAAAAAAAAAAA//////8/AAAA+P////8D/v///////////wP///8AAAAAAAAAAAD//////38AAAD8/////wf/////////////A////wAAAAAAAAAAAP///////wAAAP7/////B/////////////8D////AAAAAAAAAAAA////////AQAA//////8D/v///////////wP///8AAAAAAAAAAAD////////Dg4f//////wP+////////////A////wAAAAAAAAAAAP////////+Dx///////A/7///////////8D////AAAAAAAAAAAA/////////4P///////8D/v///////////wP///8DBwAAAAAAwMP/////////Af///////wP+////////////A////wMHAAAAAADAwf////////8B////////A/7///////////8D////AwAAAAAAAMDB/////////wH///////8D/v///////////wP///8AAAAAAAAAAAD/////////Af///////wP+////////////A////wAAAAAAAAAAAP////////8B////////A/7///////////8D////AAAAAAAAAAAA/////////wH///////8D/v///////////wP///8AAAAAAAAAAAD/////////Af///////wP+////////////A////wAAAAAAAAAAAP////////8D////////A/7///////////8D////AAAAAAAAAAAA/////////wP///////8D/v///////////wP///8AAAAAAAAAAAD/////////A////////wP+////////////A////wAAAAAAAAAAAP////////8D////////A/7///////////8D////AAAAAAAAAAAA/////////wP///////8D/v///////////wP///8BAAAAAAAAAMD/////////A////////wP+////////////A////wMAAAAAAAAAwP////////8D////////A/7///////////8D////AwAAAAAAAADA/////////4P///////8D/v///////////wP///8AAAAAAAAAAMD/////////g////////wP+////////////A////wAAAAAAAAAAAP//////PwAAAPj/////A/7///////////8D////AAAAAAAAAAAA//////8/AAAA+P////8D/v///////////wP///8AAAAAAAAAAAD//////z8AAAD4/////wP+////////////A////wAAAAAAAAAAAP//////PwAAAPj/////A/7///////////8D////AAAAAAAAAAAA//////8/AAAA+P////8D/v///////////wP///8AAAAAAAAAAAD//////z8AAAD4/////wP+////////////A////wAAAAAAAAAAAP//////PwAAAPj/////A/7///////////8D////AAAAAAAAAAAA//////8fAAAA8P////8D/v///////////wP///8AAAAAAAAAAAD//////wEAAAAA/////wP+////////////A////wAAAAAAAAAAAP//////AQAAAAD/////A/7///////////8D////AQAAAAAAAACA//////8BAAAAAP////8D/v///////////wP///8BAAAAAAAAAID//////wEAAAAA/////wP+////////////A////wEAAAAAAAAAgP//////AQAAAAD/////A/7///////////8D////AQAAAAAAAACA//////8BAAAAAP////8D/v///////////wMAAOAAAAAAAAAAAAD//////wEAAAAABwAAAAD+////////////AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7///////////8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/v///////////wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+////////////AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7///////////8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/v///////////wMAAMAAAAAAAAAAAAAHAAAAgAEAAAAAAwAAAAD+/////////////////wAAAAAAAAAAAP//////AQAAAAD/////////////////////////AQAAAAAAAACA//////8BAAAAAP////////////////////////8BAAAAAAAAAID//////wEAAAAA/////////////////////////wEAAAAAAAAAgP//////AQAAAAD/////////////////////////HwAAAAAAAACA//////8BAAAAAP////////////////////////8/AAAAAAAAAPj//////wEAAAAA/////////////////////////z8AAAAAAAAA/P//////AQAAAAD/////////////////////////PwAAAAAAAAD8//////8BAAAAAP////////////////////////8/AAAAAAAAAPz//////wEAAAAA/////////////////////////z8AAAAAAAAA/P//////AQAAAAD/////////////////////////PwAAAAAAAAD8//////8BAAAAAP////////////////////////8/AAAAAAAAAPz//////wAAAAAA/////////////////////////z8AAAAAAAAA/P//////AAAAAAD/////////////////////////PwAAAAAAAAD8//////8AAAAAAP////////////////////////8/AAAAAAAAAPz///////8/APD//////////////////////////z/AAQAAAAAA/P///////38A+P//////////////////////////////////////////////fwD4//////////////////////////////////////////////9/APj///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8=",
+  "cellSize": 0,
+  "ladders": [],
+  "monsterAreas": [
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 147.08997,
+          "y": 4.1055527,
+          "z": 50.935036
+        },
+        "upperLimit": {
+          "x": 149.04701,
+          "y": 6.1055527,
+          "z": 89.58623
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        },
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 185.6327,
+          "y": 4.1055527,
+          "z": 52.32055
+        },
+        "upperLimit": {
+          "x": 188.1848,
+          "y": 6.1055527,
+          "z": 90.26753
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 191.27919,
+          "y": 4.1055603,
+          "z": 72.97317
+        },
+        "upperLimit": {
+          "x": 193.98643,
+          "y": 6.1055603,
+          "z": 90.26861
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        },
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 141.2084,
+          "y": 4.105568,
+          "z": 72.3711
+        },
+        "upperLimit": {
+          "x": 144.49994,
+          "y": 6.105568,
+          "z": 87.412384
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 154.07037,
+          "y": 4.1055603,
+          "z": 83.233444
+        },
+        "upperLimit": {
+          "x": 165.16074,
+          "y": 6.1055603,
+          "z": 83.81971
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 168.24123,
+          "y": 4.3524475,
+          "z": 56.256428
+        },
+        "upperLimit": {
+          "x": 180.33182,
+          "y": 6.3524475,
+          "z": 56.88564
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 141.50073,
+          "y": 5.902008,
+          "z": 51.820557
+        },
+        "upperLimit": {
+          "x": 144.13275,
+          "y": 7.902008,
+          "z": 65.51648
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 190.4313,
+          "y": 5.9020157,
+          "z": 53.43302
+        },
+        "upperLimit": {
+          "x": 193.16727,
+          "y": 7.9020157,
+          "z": 68.28908
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 73.64487,
+          "y": 8.85894,
+          "z": 69.644424
+        },
+        "upperLimit": {
+          "x": 75.67434,
+          "y": 10.85894,
+          "z": 84.196884
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 762,
+          "count": 1
+        },
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 79.86378,
+          "y": 8.458931,
+          "z": 74.0728
+        },
+        "upperLimit": {
+          "x": 81.78634,
+          "y": 10.458932,
+          "z": 86.173035
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 84.9765,
+          "y": 8.808932,
+          "z": 69.36412
+        },
+        "upperLimit": {
+          "x": 86.815605,
+          "y": 10.808932,
+          "z": 86.21359
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 90.362976,
+          "y": 9.208936,
+          "z": 70.08113
+        },
+        "upperLimit": {
+          "x": 91.462746,
+          "y": 11.208936,
+          "z": 86.317535
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 37.721878,
+          "y": 9.508761,
+          "z": 55.238464
+        },
+        "upperLimit": {
+          "x": 39.31093,
+          "y": 11.508762,
+          "z": 74.93398
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 45.303158,
+          "y": 8.308967,
+          "z": 76.64223
+        },
+        "upperLimit": {
+          "x": 63.626137,
+          "y": 10.308968,
+          "z": 77.47882
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 42.385674,
+          "y": 8.158623,
+          "z": 33.63537
+        },
+        "upperLimit": {
+          "x": 44.502113,
+          "y": 10.158623,
+          "z": 43.238583
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 49.19526,
+          "y": 7.508619,
+          "z": 25.417963
+        },
+        "upperLimit": {
+          "x": 51.231667,
+          "y": 9.508618,
+          "z": 42.42093
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 54.708084,
+          "y": 8.308615,
+          "z": 21.507456
+        },
+        "upperLimit": {
+          "x": 56.527763,
+          "y": 10.308615,
+          "z": 42.307182
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 30.735386,
+          "y": 8.45862,
+          "z": 32.712444
+        },
+        "upperLimit": {
+          "x": 32.360695,
+          "y": 10.458618,
+          "z": 41.806957
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 24.169102,
+          "y": 7.7086263,
+          "z": 23.960508
+        },
+        "upperLimit": {
+          "x": 25.835365,
+          "y": 9.708627,
+          "z": 42.107124
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 18.557106,
+          "y": 7.708619,
+          "z": 22.817022
+        },
+        "upperLimit": {
+          "x": 19.663881,
+          "y": 9.708619,
+          "z": 38.65347
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 763,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 28.875887,
+          "y": 9.438159,
+          "z": 18.742811
+        },
+        "upperLimit": {
+          "x": 47.491776,
+          "y": 11.438159,
+          "z": 19.984617
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 16.4159,
+          "y": 8.738152,
+          "z": 13.677169
+        },
+        "upperLimit": {
+          "x": 34.386265,
+          "y": 10.738151,
+          "z": 14.657595
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 39.31185,
+          "y": 8.538151,
+          "z": 13.554077
+        },
+        "upperLimit": {
+          "x": 62.07534,
+          "y": 10.538152,
+          "z": 14.9687805
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 149.28893,
+          "y": 3.8896253,
+          "z": 111.8162
+        },
+        "upperLimit": {
+          "x": 151.45773,
+          "y": 5.8896255,
+          "z": 129.82169
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 138.63692,
+          "y": 1.3931046,
+          "z": 155.68826
+        },
+        "upperLimit": {
+          "x": 140.66989,
+          "y": 3.393104,
+          "z": 170.04074
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 138.45988,
+          "y": 2.8931081,
+          "z": 148.22644
+        },
+        "upperLimit": {
+          "x": 162.13109,
+          "y": 4.893109,
+          "z": 149.20705
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 160.53143,
+          "y": 1.3930969,
+          "z": 155.41957
+        },
+        "upperLimit": {
+          "x": 163.00989,
+          "y": 3.3930974,
+          "z": 170.02994
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 137.98888,
+          "y": 2.943108,
+          "z": 174.46486
+        },
+        "upperLimit": {
+          "x": 161.2987,
+          "y": 4.943109,
+          "z": 176.08925
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 133.0823,
+          "y": 3.743112,
+          "z": 170.45079
+        },
+        "upperLimit": {
+          "x": 165.69931,
+          "y": 5.7431116,
+          "z": 171.78867
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 133.60443,
+          "y": 3.093112,
+          "z": 152.22882
+        },
+        "upperLimit": {
+          "x": 166.12874,
+          "y": 5.093113,
+          "z": 153.11497
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 106.77078,
+          "y": 3.4375007,
+          "z": 166.04233
+        },
+        "upperLimit": {
+          "x": 112.37099,
+          "y": 5.4375014,
+          "z": 166.94215
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 81.41712,
+          "y": 2.6875045,
+          "z": 195.06555
+        },
+        "upperLimit": {
+          "x": 88.1173,
+          "y": 4.687505,
+          "z": 195.66609
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 48.432358,
+          "y": 2.8375049,
+          "z": 195.1262
+        },
+        "upperLimit": {
+          "x": 60.032444,
+          "y": 4.8375044,
+          "z": 196.37733
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 39.898685,
+          "y": 2.437504,
+          "z": 210.94826
+        },
+        "upperLimit": {
+          "x": 51.098766,
+          "y": 4.4375043,
+          "z": 212.24931
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 48.07084,
+          "y": 2.687516,
+          "z": 206.27017
+        },
+        "upperLimit": {
+          "x": 59.62096,
+          "y": 4.687516,
+          "z": 207.27127
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 47.79022,
+          "y": 2.4375048,
+          "z": 200.79243
+        },
+        "upperLimit": {
+          "x": 60.590347,
+          "y": 4.437505,
+          "z": 201.6937
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 35.572052,
+          "y": 2.2875044,
+          "z": 188.22865
+        },
+        "upperLimit": {
+          "x": 54.165962,
+          "y": 4.287504,
+          "z": 189.55688
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 30.00757,
+          "y": 2.787512,
+          "z": 193.87859
+        },
+        "upperLimit": {
+          "x": 45.602695,
+          "y": 4.7875123,
+          "z": 195.33788
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 29.86139,
+          "y": 2.9375045,
+          "z": 199.1749
+        },
+        "upperLimit": {
+          "x": 39.159954,
+          "y": 4.9375043,
+          "z": 200.99937
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 29.52175,
+          "y": 2.3875122,
+          "z": 205.84085
+        },
+        "upperLimit": {
+          "x": 43.867973,
+          "y": 4.387512,
+          "z": 207.41307
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 43.917267,
+          "y": 3.1872985,
+          "z": 227.74074
+        },
+        "upperLimit": {
+          "x": 45.37591,
+          "y": 5.1872983,
+          "z": 261.88663
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 81.3216,
+          "y": 5.3555565,
+          "z": 286.57498
+        },
+        "upperLimit": {
+          "x": 96.83096,
+          "y": 7.3555565,
+          "z": 288.16342
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 85.375336,
+          "y": 4.105549,
+          "z": 269.76675
+        },
+        "upperLimit": {
+          "x": 87.09601,
+          "y": 6.105549,
+          "z": 284.76382
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 91.05105,
+          "y": 4.1055527,
+          "z": 268.91144
+        },
+        "upperLimit": {
+          "x": 92.97083,
+          "y": 6.1055527,
+          "z": 283.96198
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 105.66353,
+          "y": 4.1055527,
+          "z": 267.6696
+        },
+        "upperLimit": {
+          "x": 107.29014,
+          "y": 6.1055527,
+          "z": 285.16537
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 110.667366,
+          "y": 4.1055527,
+          "z": 268.36856
+        },
+        "upperLimit": {
+          "x": 112.16576,
+          "y": 6.1055527,
+          "z": 285.852
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 120.676186,
+          "y": 5.105561,
+          "z": 286.6458
+        },
+        "upperLimit": {
+          "x": 133.09622,
+          "y": 7.105561,
+          "z": 287.48544
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 128.76022,
+          "y": 5.855561,
+          "z": 270.95044
+        },
+        "upperLimit": {
+          "x": 130.07571,
+          "y": 7.855561,
+          "z": 280.89368
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 119.801,
+          "y": 5.5555525,
+          "z": 266.83878
+        },
+        "upperLimit": {
+          "x": 122.48453,
+          "y": 7.5555525,
+          "z": 284.49704
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 100.10217,
+          "y": 4.1055565,
+          "z": 270.4396
+        },
+        "upperLimit": {
+          "x": 102.073456,
+          "y": 6.1055574,
+          "z": 279.83972
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 115.42367,
+          "y": 4.1055527,
+          "z": 270.68015
+        },
+        "upperLimit": {
+          "x": 117.0024,
+          "y": 6.1055527,
+          "z": 279.37604
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 86.911064,
+          "y": 9.533068,
+          "z": 245.26935
+        },
+        "upperLimit": {
+          "x": 93.69434,
+          "y": 11.533068,
+          "z": 253.5705
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 103.27365,
+          "y": 8.133068,
+          "z": 247.09502
+        },
+        "upperLimit": {
+          "x": 110.405815,
+          "y": 10.133068,
+          "z": 255.49997
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 767,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 117.78324,
+          "y": 9.383064,
+          "z": 247.4427
+        },
+        "upperLimit": {
+          "x": 126.175476,
+          "y": 11.383063,
+          "z": 254.91093
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 118.5591,
+          "y": 9.433066,
+          "z": 236.40431
+        },
+        "upperLimit": {
+          "x": 130.70966,
+          "y": 11.233066,
+          "z": 243.11247
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 78.5557,
+          "y": 8.383071,
+          "z": 237.28987
+        },
+        "upperLimit": {
+          "x": 96.202126,
+          "y": 10.383072,
+          "z": 239.70633
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 151.75638,
+          "y": 4.9055533,
+          "z": 274.63406
+        },
+        "upperLimit": {
+          "x": 176.96947,
+          "y": 6.9055533,
+          "z": 275.53094
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 195.2725,
+          "y": 4.1025696,
+          "z": 272.88565
+        },
+        "upperLimit": {
+          "x": 197.84007,
+          "y": 6.1025696,
+          "z": 282.64212
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 203.4369,
+          "y": 4.1025696,
+          "z": 274.3799
+        },
+        "upperLimit": {
+          "x": 206.12683,
+          "y": 6.1025696,
+          "z": 286.7377
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 214.94507,
+          "y": 4.1029625,
+          "z": 276.5316
+        },
+        "upperLimit": {
+          "x": 216.20529,
+          "y": 6.1029625,
+          "z": 286.97427
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 193.75223,
+          "y": 4.1031265,
+          "z": 267.3767
+        },
+        "upperLimit": {
+          "x": 210.89816,
+          "y": 6.1031265,
+          "z": 269.83777
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        },
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 207.68945,
+          "y": 4.1032486,
+          "z": 272.2817
+        },
+        "upperLimit": {
+          "x": 220.04315,
+          "y": 6.1032486,
+          "z": 273.99167
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 194.60197,
+          "y": 4.104233,
+          "z": 261.6174
+        },
+        "upperLimit": {
+          "x": 212.85478,
+          "y": 6.104233,
+          "z": 263.44025
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 229.94186,
+          "y": 5.035972,
+          "z": 274.60242
+        },
+        "upperLimit": {
+          "x": 251.88988,
+          "y": 7.035972,
+          "z": 275.93903
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 261.65637,
+          "y": 7.1221585,
+          "z": 241.70059
+        },
+        "upperLimit": {
+          "x": 263.34073,
+          "y": 9.122157,
+          "z": 270.25186
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 191.42928,
+          "y": 1.635315,
+          "z": 220.84238
+        },
+        "upperLimit": {
+          "x": 194.84993,
+          "y": 3.6353154,
+          "z": 229.33788
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 197.98392,
+          "y": 1.635315,
+          "z": 226.59155
+        },
+        "upperLimit": {
+          "x": 200.75505,
+          "y": 3.6353154,
+          "z": 235.23914
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 203.08968,
+          "y": 1.6352997,
+          "z": 230.41278
+        },
+        "upperLimit": {
+          "x": 212.83789,
+          "y": 3.6352994,
+          "z": 231.8381
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 216.62704,
+          "y": 1.6352997,
+          "z": 222.06819
+        },
+        "upperLimit": {
+          "x": 218.04314,
+          "y": 3.6352997,
+          "z": 229.12001
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 195.6301,
+          "y": 2.7852273,
+          "z": 200.58745
+        },
+        "upperLimit": {
+          "x": 215.67935,
+          "y": 4.7852273,
+          "z": 202.33002
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 219.77928,
+          "y": 1.6352844,
+          "z": 214.45518
+        },
+        "upperLimit": {
+          "x": 221.60272,
+          "y": 3.6352842,
+          "z": 223.8558
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 215.69525,
+          "y": 1.6352615,
+          "z": 205.19482
+        },
+        "upperLimit": {
+          "x": 217.07181,
+          "y": 3.6352613,
+          "z": 215.54689
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 187.97668,
+          "y": 1.6352615,
+          "z": 206.87386
+        },
+        "upperLimit": {
+          "x": 189.80751,
+          "y": 3.6352623,
+          "z": 218.57445
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 193.46051,
+          "y": 1.6352463,
+          "z": 204.69756
+        },
+        "upperLimit": {
+          "x": 195.13567,
+          "y": 3.6352463,
+          "z": 214.59863
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 200.9232,
+          "y": 3.434781,
+          "z": 213.65091
+        },
+        "upperLimit": {
+          "x": 208.25246,
+          "y": 5.4347825,
+          "z": 214.53198
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 201.04195,
+          "y": 3.1847813,
+          "z": 218.7705
+        },
+        "upperLimit": {
+          "x": 208.17493,
+          "y": 5.1847816,
+          "z": 219.49664
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 203.43504,
+          "y": 2.3839452,
+          "z": 176.84845
+        },
+        "upperLimit": {
+          "x": 204.78209,
+          "y": 4.383946,
+          "z": 189.0983
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 175.86125,
+          "y": 3.3352766,
+          "z": 163.00493
+        },
+        "upperLimit": {
+          "x": 189.6614,
+          "y": 5.335277,
+          "z": 164.45825
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 184.2571,
+          "y": 8.555302,
+          "z": 101.12319
+        },
+        "upperLimit": {
+          "x": 185.79965,
+          "y": 10.555302,
+          "z": 129.07317
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 189.9687,
+          "y": 5.6552896,
+          "z": 134.82173
+        },
+        "upperLimit": {
+          "x": 191.63126,
+          "y": 7.6552896,
+          "z": 140.57294
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 200.63136,
+          "y": 5.8052983,
+          "z": 145.64667
+        },
+        "upperLimit": {
+          "x": 250.67897,
+          "y": 7.8052983,
+          "z": 146.83568
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 260.6415,
+          "y": 5.655305,
+          "z": 154.09015
+        },
+        "upperLimit": {
+          "x": 262.4214,
+          "y": 7.655305,
+          "z": 194.19116
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 243.03906,
+          "y": 6.591072,
+          "z": 201.79218
+        },
+        "upperLimit": {
+          "x": 257.6236,
+          "y": 8.591072,
+          "z": 202.77702
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 241.61,
+          "y": 6.5910606,
+          "z": 206.51816
+        },
+        "upperLimit": {
+          "x": 242.63905,
+          "y": 8.591061,
+          "z": 227.78757
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 265.4391,
+          "y": 6.5910683,
+          "z": 201.84294
+        },
+        "upperLimit": {
+          "x": 276.87485,
+          "y": 8.591068,
+          "z": 202.93156
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 284.31805,
+          "y": 6.5910645,
+          "z": 206.37242
+        },
+        "upperLimit": {
+          "x": 285.51953,
+          "y": 8.591064,
+          "z": 228.93915
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 769,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 267.8159,
+          "y": 6.5910683,
+          "z": 230.76004
+        },
+        "upperLimit": {
+          "x": 281.40216,
+          "y": 8.591068,
+          "z": 231.34303
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 245.4211,
+          "y": 6.591076,
+          "z": 230.96982
+        },
+        "upperLimit": {
+          "x": 258.40988,
+          "y": 8.591076,
+          "z": 231.80887
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 249.73962,
+          "y": 6.3401375,
+          "z": 209.11108
+        },
+        "upperLimit": {
+          "x": 255.77434,
+          "y": 8.3401375,
+          "z": 224.52097
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 257.43826,
+          "y": 6.3401413,
+          "z": 209.048
+        },
+        "upperLimit": {
+          "x": 260.07257,
+          "y": 8.340141,
+          "z": 224.39247
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 269.81256,
+          "y": 6.3401413,
+          "z": 209.30072
+        },
+        "upperLimit": {
+          "x": 275.74164,
+          "y": 8.340141,
+          "z": 224.06172
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 246.36868,
+          "y": 3.6548507,
+          "z": 65.55029
+        },
+        "upperLimit": {
+          "x": 277.9156,
+          "y": 5.6548505,
+          "z": 67.10589
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 769,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 246.17436,
+          "y": 2.4548585,
+          "z": 87.61147
+        },
+        "upperLimit": {
+          "x": 278.1683,
+          "y": 4.454859,
+          "z": 88.86261
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 241.79619,
+          "y": 3.0548506,
+          "z": 69.8591
+        },
+        "upperLimit": {
+          "x": 243.44124,
+          "y": 5.054851,
+          "z": 86.41337
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 246.17883,
+          "y": 2.3548508,
+          "z": 79.730896
+        },
+        "upperLimit": {
+          "x": 261.22668,
+          "y": 4.354851,
+          "z": 81.45089
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 246.85791,
+          "y": 2.7548509,
+          "z": 73.80791
+        },
+        "upperLimit": {
+          "x": 260.10886,
+          "y": 4.754851,
+          "z": 75.845825
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 280.8536,
+          "y": 3.1429474,
+          "z": 69.522514
+        },
+        "upperLimit": {
+          "x": 282.43784,
+          "y": 5.1429477,
+          "z": 84.97733
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 762,
+          "count": 1
+        },
+        {
+          "mobId": 769,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 264.42252,
+          "y": 2.4548507,
+          "z": 79.865204
+        },
+        "upperLimit": {
+          "x": 278.41742,
+          "y": 4.4548507,
+          "z": 81.295685
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 263.962,
+          "y": 2.8048508,
+          "z": 74.531555
+        },
+        "upperLimit": {
+          "x": 278.25537,
+          "y": 4.804851,
+          "z": 75.809044
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        },
+        {
+          "mobId": 762,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 164.30923,
+          "y": 5.9020233,
+          "z": 34.9083
+        },
+        "upperLimit": {
+          "x": 172.11926,
+          "y": 7.9020233,
+          "z": 42.54767
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 156,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 109.48395,
+          "y": 4.704933,
+          "z": 75.93635
+        },
+        "upperLimit": {
+          "x": 127.83512,
+          "y": 6.704933,
+          "z": 78.78003
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 156,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 218.19289,
+          "y": 1.6056175,
+          "z": 75.97814
+        },
+        "upperLimit": {
+          "x": 230.94226,
+          "y": 3.6056175,
+          "z": 79.19107
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 156,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 44.46706,
+          "y": 1.6358366,
+          "z": 273.40543
+        },
+        "upperLimit": {
+          "x": 57.56048,
+          "y": 3.6358366,
+          "z": 275.86282
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 156,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 98.9904,
+          "y": 1.6374912,
+          "z": 172.41772
+        },
+        "upperLimit": {
+          "x": 99.837685,
+          "y": 3.6374912,
+          "z": 180.77274
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 156,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 154.29457,
+          "y": 4.352463,
+          "z": 56.654102
+        },
+        "upperLimit": {
+          "x": 165.03398,
+          "y": 6.352463,
+          "z": 57.612362
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 170.3915,
+          "y": 4.3524323,
+          "z": 82.30051
+        },
+        "upperLimit": {
+          "x": 181.15292,
+          "y": 6.3524323,
+          "z": 83.49689
+        }
+      },
+      "monsters": []
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 153.29196,
+          "y": 4.3524513,
+          "z": 64.42519
+        },
+        "upperLimit": {
+          "x": 154.75336,
+          "y": 6.3524513,
+          "z": 76.74681
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 760,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 179.76457,
+          "y": 4.3524475,
+          "z": 64.04486
+        },
+        "upperLimit": {
+          "x": 180.96909,
+          "y": 6.3524475,
+          "z": 75.241066
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 761,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 165.11389,
+          "y": 1.3931084,
+          "z": 158.05923
+        },
+        "upperLimit": {
+          "x": 167.30133,
+          "y": 3.3931084,
+          "z": 169.41429
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 763,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 134.1748,
+          "y": 1.3931084,
+          "z": 157.61957
+        },
+        "upperLimit": {
+          "x": 136.17856,
+          "y": 3.3931084,
+          "z": 169.13542
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 97.31944,
+          "y": 6.6830635,
+          "z": 245.2738
+        },
+        "upperLimit": {
+          "x": 98.81788,
+          "y": 8.6830635,
+          "z": 252.56062
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 764,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 96.00998,
+          "y": 4.105549,
+          "z": 272.0131
+        },
+        "upperLimit": {
+          "x": 97.55686,
+          "y": 6.105549,
+          "z": 279.31198
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 125.933075,
+          "y": 4.105545,
+          "z": 272.0792
+        },
+        "upperLimit": {
+          "x": 126.83736,
+          "y": 6.105545,
+          "z": 280.65875
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 112.95058,
+          "y": 6.6830673,
+          "z": 246.12538
+        },
+        "upperLimit": {
+          "x": 114.8803,
+          "y": 8.683067,
+          "z": 253.7533
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 204.46791,
+          "y": 1.6352386,
+          "z": 203.67871
+        },
+        "upperLimit": {
+          "x": 213.7977,
+          "y": 3.6352386,
+          "z": 206.62735
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 265.11023,
+          "y": 6.3401375,
+          "z": 208.54012
+        },
+        "upperLimit": {
+          "x": 267.9899,
+          "y": 8.3401375,
+          "z": 224.19258
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 765,
+          "count": 1
+        },
+        {
+          "mobId": 766,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "npcs": [],
+  "portals": [
+    {
+      "portalPosition": {
+        "x": 167.01054,
+        "y": 12.001441,
+        "z": 2.3652666
+      },
+      "factionOrPortalId": 1,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 1,
+      "targetMapPosition": {
+        "x": 232.51,
+        "y": 17.52,
+        "z": 616.2
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 108.08857,
+        "y": 1.1258614,
+        "z": 190.14539
+      },
+      "factionOrPortalId": 1,
+      "minLevel": 1,
+      "maxLevel": 35,
+      "targetMapId": 6,
+      "targetMapPosition": {
+        "x": 42.66,
+        "y": 7.7,
+        "z": 9.71
+      }
+    }
+  ],
+  "spawns": [
+    {
+      "unknown1": 1,
+      "faction": "Fury",
+      "unknown2": 0,
+      "area": {
+        "lowerLimit": {
+          "x": 161.31699,
+          "y": 5.9020195,
+          "z": 31.789719
+        },
+        "upperLimit": {
+          "x": 172.25732,
+          "y": 7.902022,
+          "z": 38.611145
+        }
+      }
+    }
+  ],
+  "namedAreas": [
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 106.88116,
+          "y": 1.7758591,
+          "z": 187.46048
+        },
+        "upperLimit": {
+          "x": 108.88116,
+          "y": 3.7758589,
+          "z": 189.46048
+        }
+      },
+      "nameIdentifier1": 0,
+      "nameIdentifier2": 0
+    }
+  ],
+  "episode": "EP5"
+}

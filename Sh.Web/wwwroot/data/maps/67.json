@@ -1,0 +1,402 @@
+{
+  "mapSize": 632,
+  "cellSize": 0,
+  "ladders": [],
+  "monsterAreas": [
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 315.66,
+          "y": 2.2,
+          "z": 81
+        },
+        "upperLimit": {
+          "x": 315.66,
+          "y": 2.2,
+          "z": 81
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2472,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 282.248,
+          "y": 3.4605637,
+          "z": 50.561325
+        },
+        "upperLimit": {
+          "x": 284.248,
+          "y": 5.4605637,
+          "z": 52.561325
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 304.0503,
+          "y": 3.4605598,
+          "z": 38.75651
+        },
+        "upperLimit": {
+          "x": 306.0503,
+          "y": 5.46056,
+          "z": 40.75651
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 325.48734,
+          "y": 3.4605637,
+          "z": 38.713444
+        },
+        "upperLimit": {
+          "x": 327.48734,
+          "y": 5.4605637,
+          "z": 40.713444
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 346.33014,
+          "y": 3.4605637,
+          "z": 49.07791
+        },
+        "upperLimit": {
+          "x": 348.33014,
+          "y": 5.4605637,
+          "z": 51.07791
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 284.81622,
+          "y": 3.4605598,
+          "z": 109.5748
+        },
+        "upperLimit": {
+          "x": 286.81622,
+          "y": 5.46056,
+          "z": 111.5748
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 303.267,
+          "y": 3.4605598,
+          "z": 121.41494
+        },
+        "upperLimit": {
+          "x": 305.267,
+          "y": 5.46056,
+          "z": 123.41494
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 326.78793,
+          "y": 3.4605637,
+          "z": 121.04236
+        },
+        "upperLimit": {
+          "x": 328.78793,
+          "y": 5.4605637,
+          "z": 123.04236
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 347.31598,
+          "y": 3.4605637,
+          "z": 109.22762
+        },
+        "upperLimit": {
+          "x": 349.31598,
+          "y": 5.4605637,
+          "z": 111.22762
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 331.79117,
+          "y": 2.1305866,
+          "z": 70.568794
+        },
+        "upperLimit": {
+          "x": 333.79117,
+          "y": 4.1305866,
+          "z": 72.568794
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 332.04044,
+          "y": 1.9605942,
+          "z": 89.3904
+        },
+        "upperLimit": {
+          "x": 334.04044,
+          "y": 3.9605942,
+          "z": 91.3904
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 297.94257,
+          "y": 2.1382828,
+          "z": 91.22248
+        },
+        "upperLimit": {
+          "x": 299.94257,
+          "y": 4.138283,
+          "z": 93.22248
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 296.26862,
+          "y": 2.1382961,
+          "z": 70.52388
+        },
+        "upperLimit": {
+          "x": 298.26862,
+          "y": 4.138296,
+          "z": 72.52388
+        }
+      },
+      "monsters": [
+        {
+          "mobId": 2468,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "npcs": [],
+  "portals": [
+    {
+      "portalPosition": {
+        "x": 566.5099,
+        "y": 26.874945,
+        "z": 82.01695
+      },
+      "factionOrPortalId": 2,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 67,
+      "targetMapPosition": {
+        "x": 512.51,
+        "y": 22.0,
+        "z": 81.41
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 534.2412,
+        "y": 24.739405,
+        "z": 83.32516
+      },
+      "factionOrPortalId": 2,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 67,
+      "targetMapPosition": {
+        "x": 605.0,
+        "y": 27.0,
+        "z": 82.0
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 65.6336,
+        "y": 27.435806,
+        "z": 80.864784
+      },
+      "factionOrPortalId": 1,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 67,
+      "targetMapPosition": {
+        "x": 106.58,
+        "y": 23.0,
+        "z": 80.65
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 98.70835,
+        "y": 24.773872,
+        "z": 80.49827
+      },
+      "factionOrPortalId": 1,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 67,
+      "targetMapPosition": {
+        "x": 18.98,
+        "y": 27.0,
+        "z": 81.16
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 625.42737,
+        "y": 26.068987,
+        "z": 78.496124
+      },
+      "factionOrPortalId": 2,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 0,
+      "targetMapPosition": {
+        "x": 1882.62,
+        "y": 14.8,
+        "z": 377.72
+      }
+    },
+    {
+      "portalPosition": {
+        "x": 7.8258266,
+        "y": 26.068987,
+        "z": 85.127945
+      },
+      "factionOrPortalId": 1,
+      "minLevel": 0,
+      "maxLevel": 999,
+      "targetMapId": 0,
+      "targetMapPosition": {
+        "x": 248.67,
+        "y": 26.045,
+        "z": 1808.12
+      }
+    }
+  ],
+  "spawns": [],
+  "namedAreas": [
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 619.33606,
+          "y": 26.068987,
+          "z": 74.623276
+        },
+        "upperLimit": {
+          "x": 631.8368,
+          "y": 34.36895,
+          "z": 82.32155
+        }
+      },
+      "nameIdentifier1": 0,
+      "nameIdentifier2": 0
+    },
+    {
+      "area": {
+        "lowerLimit": {
+          "x": 5.0687666,
+          "y": 26.068985,
+          "z": 82.24024
+        },
+        "upperLimit": {
+          "x": 12.151466,
+          "y": 31.86898,
+          "z": 88.04975
+        }
+      },
+      "nameIdentifier1": 0,
+      "nameIdentifier2": 0
+    }
+  ],
+  "episode": "EP5"
+}

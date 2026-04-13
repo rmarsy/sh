@@ -1,0 +1,7 @@
+# Allow all pages by default
+User-agent: *
+Allow: /
+
+# Disallow specific paths you don't want indexed
+Disallow: /admin/
+Disallow: /dashboard/
