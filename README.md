@@ -49,7 +49,43 @@ A Blazor Web App + ASP.NET Core Web API conversion of the [shinertia](https://gi
 
 ---
 
-## Setup
+## Docker
+
+All configuration is driven by environment variables so no file edits are needed.
+
+### Development (hot reload)
+
+`docker-compose.override.yml` is automatically merged when you run `docker compose up`.
+It targets the `dev` build stage (SDK image + `dotnet watch`) and mounts your source
+directories so code changes are reflected without rebuilding the image.
+
+```bash
+docker compose up --build
+```
+
+| Service | URL |
+|---------|-----|
+| Sh.Web  | <http://localhost:5001> |
+| Sh.Api  | <http://localhost:5000> |
+| SQL Server | `localhost,1433` |
+
+### Production
+
+1. Copy `.env.example` to `.env` and fill in all values:
+   ```bash
+   cp .env.example .env
+   ```
+2. Start the stack (the override file is **not** used because you pass `-f` explicitly):
+   ```bash
+   docker compose -f docker-compose.yml up -d --build
+   ```
+
+> **Note:** The containers run on HTTP internally. For HTTPS in production, put a
+> reverse proxy (nginx, Traefik, Caddy, …) in front and terminate TLS there.
+
+---
+
+## Setup (without Docker)
 
 1. **Clone and restore**
    ```bash

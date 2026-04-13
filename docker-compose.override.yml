@@ -1,0 +1,36 @@
+# Development overrides — automatically merged when running `docker compose up`
+# Builds use the SDK image with `dotnet watch` for hot reload.
+# Source directories are mounted so file changes are reflected instantly.
+
+services:
+  sqlserver:
+    environment:
+      MSSQL_SA_PASSWORD: "Dev!Passw0rd#Local"
+
+  sh-api:
+    build:
+      target: dev
+    volumes:
+      - ./Sh.Api:/src/Sh.Api
+      - /src/Sh.Api/bin
+      - /src/Sh.Api/obj
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      MSSQL_SA_PASSWORD: "Dev!Passw0rd#Local"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=PS_WebSite;User Id=Shaiya;Password=Shaiya123;TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__UserConnection: "Server=sqlserver,1433;Database=PS_UserData;User Id=Shaiya;Password=Shaiya123;TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__GameConnection: "Server=sqlserver,1433;Database=PS_GameData;User Id=Shaiya;Password=Shaiya123;TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__GameLogConnection: "Server=sqlserver,1433;Database=PS_GameLog;User Id=Shaiya;Password=Shaiya123;TrustServerCertificate=true;MultipleActiveResultSets=true"
+      Jwt__Key: "dev-local-jwt-signing-key-not-for-production"
+      Turnstile__Enabled: "false"
+      ApiKey__Keys__0: "dev-local-api-key"
+
+  sh-web:
+    build:
+      target: dev
+    volumes:
+      - ./Sh.Web:/src/Sh.Web
+      - /src/Sh.Web/bin
+      - /src/Sh.Web/obj
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
