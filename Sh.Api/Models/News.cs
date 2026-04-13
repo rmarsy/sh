@@ -17,24 +17,15 @@ public class News
     [Column("content")]
     public string Content { get; set; } = string.Empty;
 
-    [Column("category")]
-    [MaxLength(50)]
-    public string Category { get; set; } = string.Empty;
+    [Column("isPublished")]
+    public bool IsPublished { get; set; }
 
-    [Column("imageurl")]
-    [MaxLength(500)]
-    public string? ImageUrl { get; set; }
+    [Column("author")]
+    public int Author { get; set; }
 
-    [Column("slug")]
-    [MaxLength(255)]
-    public string? Slug { get; set; }
-
-    [Column("published")]
-    public bool Published { get; set; }
-
-    [Column("createdat")]
+    [Column("createdAt")]
     public DateTime CreatedAt { get; set; }
 
-    [Column("updatedat")]
+    [Column("updatedAt")]
     public DateTime? UpdatedAt { get; set; }
 }

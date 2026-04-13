@@ -21,7 +21,7 @@ public class LauncherController(ServerManager serverManager, AppDbContext db) : 
     public async Task<IActionResult> GetNews()
     {
         var news = await db.News
-            .Where(n => n.Published)
+            .Where(n => n.IsPublished)
             .OrderByDescending(n => n.CreatedAt)
             .Take(10)
             .ToListAsync();
