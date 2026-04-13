@@ -4,10 +4,16 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.file.filename=/traefik/dynamic.dev.yml"
       - "--api.dashboard=true"
       - "--api.insecure=true"
     ports:
+      - "443:443"
       - "8081:8080"
+    volumes:
+      - ./certs:/certs:ro
+      - ./traefik/dynamic.dev.yml:/traefik/dynamic.dev.yml:ro
 
   sh-api:
     build:
@@ -25,9 +31,12 @@ services:
       ConnectionStrings__GameConnection: "Server=host.docker.internal,1433;Database=PS_GameData;User Id=${MSSQL_USER:-Shaiya};Password=${MSSQL_PASSWORD:-Shaiya123};TrustServerCertificate=true;MultipleActiveResultSets=true"
       ConnectionStrings__GameLogConnection: "Server=host.docker.internal,1433;Database=PS_GameLog;User Id=${MSSQL_USER:-Shaiya};Password=${MSSQL_PASSWORD:-Shaiya123};TrustServerCertificate=true;MultipleActiveResultSets=true"
       Jwt__Key: "${JWT_KEY:-dev-local-jwt-signing-key-not-for-production}"
-      Cors__AllowedOrigins__0: "${WEB_ORIGIN:-http://web.localhost}"
+      Cors__AllowedOrigins__0: "${WEB_ORIGIN:-https://web.localhost}"
       Turnstile__Enabled: "false"
       ApiKey__Keys__0: "${API_KEY:-dev-local-api-key}"
+    labels:
+      traefik.http.routers.sh-api.entrypoints: "web,websecure"
+      traefik.http.routers.sh-api.tls: "true"
 
   sh-web:
     build:
@@ -40,3 +49,6 @@ services:
       - /src/Sh.Web/obj
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+    labels:
+      traefik.http.routers.sh-web.entrypoints: "web,websecure"
+      traefik.http.routers.sh-web.tls: "true"
