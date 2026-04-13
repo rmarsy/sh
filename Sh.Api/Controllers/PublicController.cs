@@ -14,7 +14,7 @@ public class PublicController(AppDbContext db, GameDbContext gameDb, ServerManag
     public async Task<IActionResult> GetHome()
     {
         var news = await db.News
-            .Where(n => n.Published)
+            .Where(n => n.IsPublished)
             .OrderByDescending(n => n.CreatedAt)
             .Take(5)
             .ToListAsync();
@@ -53,9 +53,9 @@ public class PublicController(AppDbContext db, GameDbContext gameDb, ServerManag
     [HttpGet("news")]
     public async Task<IActionResult> GetNews([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string? category = null)
     {
-        var query = db.News.Where(n => n.Published);
+        var query = db.News.Where(n => n.IsPublished);
         if (!string.IsNullOrEmpty(category))
-            query = query.Where(n => n.Category == category);
+            query = query.Where(n => false); // category column no longer exists in the table
 
         var total = await query.CountAsync();
         var items = await query
@@ -76,7 +76,7 @@ public class PublicController(AppDbContext db, GameDbContext gameDb, ServerManag
     [HttpGet("news/{id:int}")]
     public async Task<IActionResult> GetNewsItem(int id)
     {
-        var news = await db.News.FirstOrDefaultAsync(n => n.Id == id && n.Published);
+        var news = await db.News.FirstOrDefaultAsync(n => n.Id == id && n.IsPublished);
         if (news == null) return NotFound(ApiResponse<object>.Fail("News not found."));
         return Ok(ApiResponse<News>.Ok(news));
     }

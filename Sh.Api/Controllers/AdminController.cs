@@ -110,10 +110,8 @@ public class AdminController(UserDbContext userDb, AppDbContext db, GameLogDbCon
         {
             Title = request.Title,
             Content = request.Content,
-            Category = request.Category,
-            ImageUrl = request.ImageUrl,
-            Slug = request.Slug ?? request.Title.ToLower().Replace(" ", "-"),
-            Published = request.Published,
+            IsPublished = request.IsPublished,
+            Author = request.Author,
             CreatedAt = DateTime.UtcNow
         };
 
@@ -133,9 +131,7 @@ public class AdminController(UserDbContext userDb, AppDbContext db, GameLogDbCon
 
         news.Title = request.Title;
         news.Content = request.Content;
-        news.Category = request.Category;
-        news.ImageUrl = request.ImageUrl;
-        news.Published = request.Published;
+        news.IsPublished = request.IsPublished;
         news.UpdatedAt = DateTime.UtcNow;
 
         await db.SaveChangesAsync();

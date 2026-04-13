@@ -145,10 +145,8 @@ public class CreateNewsRequest
 {
     public string Title { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
-    public string Category { get; set; } = string.Empty;
-    public string? ImageUrl { get; set; }
-    public string? Slug { get; set; }
-    public bool Published { get; set; }
+    public bool IsPublished { get; set; }
+    public int Author { get; set; }
 }
 
 public class CreateRedeemCodeRequest
