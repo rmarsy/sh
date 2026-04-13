@@ -1,23 +1,87 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
+@inject AuthStateProvider Auth
+@inject NavigationManager Nav
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<div class="sh-layout">
+    <nav class="navbar navbar-expand-lg navbar-dark sh-navbar">
+        <div class="container">
+            <a class="navbar-brand sh-brand" href="/">
+                <span class="sh-brand-icon">⚔</span>
+                <span class="sh-brand-text">SHAIYA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/server-info">Server Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pvp-ranking">PvP Ranking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/drop-list">Drop List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/download">Download</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <AuthorizeView>
+                        <Authorized>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle sh-user-menu" href="#" data-bs-toggle="dropdown">
+                                    <span class="sh-user-icon">👤</span>
+                                    @context.User.Identity?.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end sh-dropdown">
+                                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="/dashboard/shop">Shop</a></li>
+                                    <li><a class="dropdown-item" href="/dashboard/vote">Vote</a></li>
+                                    <li><a class="dropdown-item" href="/dashboard/donate">Donate</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="/dashboard/profile">Profile</a></li>
+                                    @if (context.User.HasClaim("admin", "true"))
+                                    {
+                                        <li><hr class="dropdown-divider" /></li>
+                                        <li><a class="dropdown-item sh-admin-link" href="/admin">Admin Panel</a></li>
+                                    }
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        </Authorized>
+                        <NotAuthorized>
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            <li class="nav-item"><a class="btn sh-btn-gold ms-2" href="/register">Register</a></li>
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <article class="content px-4">
-            @Body
-        </article>
+    <main class="sh-main">
+        @Body
     </main>
+
+    <footer class="sh-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="sh-footer-title">SHAIYA</h5>
+                    <p class="text-muted small">A private server dedicated to the best MMORPG experience.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="sh-footer-title">Navigation</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="/" class="sh-footer-link">Home</a></li>
+                        <li><a href="/download" class="sh-footer-link">Download</a></li>
+                        <li><a href="/terms" class="sh-footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="sh-footer-title">Legal</h6>
+                    <p class="text-muted small">&copy; @DateTime.Now.Year Shaiya Private Server. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 
-<div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-</div>
+@code {
+}

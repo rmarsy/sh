@@ -1,0 +1,36 @@
+@page "/admin/shop"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Shop Management - Admin</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Manage Shop Items</h1>
+    @if (_result != null)
+    {
+        <div class="sh-table-container">
+            <table class="table sh-table">
+                <thead><tr><th>Name</th><th>Price</th><th>Currency</th><th>Active</th><th>Featured</th></tr></thead>
+                <tbody>
+                    @foreach (var i in _result.Items)
+                    {
+                        <tr>
+                            <td>@i.Name</td>
+                            <td class="sh-gold">@i.Price</td>
+                            <td>@i.Currency</td>
+                            <td><span class="badge @(i.Active?"bg-success":"bg-secondary")">@(i.Active?"Yes":"No")</span></td>
+                            <td><span class="badge @(i.Featured?"bg-warning text-dark":"bg-secondary")">@(i.Featured?"Yes":"No")</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <Pagination CurrentPage="_page" TotalItems="_result.Total" PageSize="20" OnPageChange="LoadPage" />
+    }
+</div>
+@code {
+    private PagedResult<ShopItemDto>? _result; private int _page=1;
+    protected override async Task OnInitializedAsync() => await LoadPage(1);
+    private async Task LoadPage(int p) { _page=p; _result = await Api.GetAdminShopItemsAsync(p); }
+}

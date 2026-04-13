@@ -1,0 +1,61 @@
+@page "/login"
+@rendermode InteractiveServer
+@layout AuthLayout
+@inject AuthStateProvider Auth
+@inject NavigationManager Nav
+
+<PageTitle>Login - Shaiya</PageTitle>
+
+<h4 class="sh-auth-title">Welcome Back</h4>
+
+<Alert Message="@_error" Type="error" OnDismiss="() => _error = null" />
+
+<EditForm Model="_model" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <InputText @bind-Value="_model.Username" class="form-control sh-input" placeholder="Enter username" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <InputText @bind-Value="_model.Password" type="password" class="form-control sh-input" placeholder="Enter password" />
+    </div>
+    <div class="d-grid mb-3">
+        <button type="submit" class="btn sh-btn-gold" disabled="@_loading">
+            @if (_loading) { <span class="spinner-border spinner-border-sm me-2"></span> }
+            Login
+        </button>
+    </div>
+</EditForm>
+
+<div class="text-center">
+    <a href="/forgot-password" class="sh-auth-link">Forgot password?</a>
+</div>
+<hr class="sh-divider" />
+<p class="text-center text-muted small">
+    Don't have an account? <a href="/register" class="sh-auth-link">Register here</a>
+</p>
+
+@code {
+    private readonly LoginModel _model = new();
+    private string? _error;
+    private bool _loading;
+
+    private async Task HandleLogin()
+    {
+        _loading = true;
+        _error = null;
+        var (success, message) = await Auth.LoginAsync(_model.Username, _model.Password, null);
+        if (success)
+            Nav.NavigateTo("/dashboard");
+        else
+            _error = message;
+        _loading = false;
+    }
+
+    private class LoginModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}

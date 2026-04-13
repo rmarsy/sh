@@ -1,0 +1,36 @@
+@page "/admin/redeem-codes"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Redeem Codes - Admin</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Manage Redeem Codes</h1>
+    @if (_result != null)
+    {
+        <div class="sh-table-container">
+            <table class="table sh-table">
+                <thead><tr><th>Code</th><th>Description</th><th>Uses</th><th>Expires</th><th>Active</th></tr></thead>
+                <tbody>
+                    @foreach (var c in _result.Items)
+                    {
+                        <tr>
+                            <td class="sh-gold fw-bold">@c.Code</td>
+                            <td>@c.Description</td>
+                            <td>@c.CurrentUses / @(c.MaxUses == 0 ? "∞" : c.MaxUses.ToString())</td>
+                            <td>@(c.ExpiresAt?.ToString("yyyy-MM-dd") ?? "Never")</td>
+                            <td><span class="badge @(c.Active?"bg-success":"bg-secondary")">@(c.Active?"Active":"Inactive")</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <Pagination CurrentPage="_page" TotalItems="_result.Total" PageSize="20" OnPageChange="LoadPage" />
+    }
+</div>
+@code {
+    private PagedResult<RedeemCodeDto>? _result; private int _page=1;
+    protected override async Task OnInitializedAsync() => await LoadPage(1);
+    private async Task LoadPage(int p) { _page=p; _result = await Api.GetAdminRedeemCodesAsync(p); }
+}

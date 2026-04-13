@@ -1,0 +1,54 @@
+@page "/dashboard/shop/{Id:int}"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+@inject NavigationManager Nav
+
+<PageTitle>Shop Item - Shaiya</PageTitle>
+
+<div class="container py-4">
+    <a href="/dashboard/shop" class="btn sh-btn-outline btn-sm mb-4">← Back to Shop</a>
+    @if (_item != null)
+    {
+        <div class="row">
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(_item.ImageUrl))
+                { <img src="@_item.ImageUrl" alt="@_item.Name" class="img-fluid sh-item-detail-img" /> }
+            </div>
+            <div class="col-md-8">
+                <h2 class="sh-gold">@_item.Name</h2>
+                <p>@_item.Description</p>
+                <p class="fs-4 fw-bold sh-gold">@_item.Price @_item.Currency</p>
+                <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+                <select class="form-select sh-input mb-3" @bind="_selectedChar">
+                    <option value="0">Select Character</option>
+                    @foreach (var c in _characters)
+                    { <option value="@c.CharId">@c.CharName (Lv.@c.Level)</option> }
+                </select>
+                <button class="btn sh-btn-gold" @onclick="DoPurchase" disabled="@_buying">Purchase</button>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private ShopItemDto? _item; private List<CharacterDto> _characters = [];
+    private int _selectedChar; private bool _buying;
+    private string? _msg; private string _msgType = "success";
+    protected override async Task OnInitializedAsync()
+    {
+        var shop = await Api.GetShopAsync();
+        _item = shop?.Items.FirstOrDefault(i => i.Id == Id);
+        var dash = await Api.GetDashboardAsync();
+        if (dash != null) _characters = dash.Characters;
+    }
+    private async Task DoPurchase()
+    {
+        if (_item == null || _selectedChar == 0) { _msg = "Select a character."; _msgType = "error"; return; }
+        _buying = true;
+        var (s, m, _) = await Api.PurchaseAsync(_item.Id, _selectedChar, 1);
+        _msg = m; _msgType = s ? "success" : "error"; _buying = false;
+    }
+}

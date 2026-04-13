@@ -1,0 +1,35 @@
+@page "/admin/news"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Patch Notes - Admin</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Manage News / Patch Notes</h1>
+    @if (_result != null)
+    {
+        <div class="sh-table-container">
+            <table class="table sh-table">
+                <thead><tr><th>Title</th><th>Category</th><th>Published</th><th>Date</th></tr></thead>
+                <tbody>
+                    @foreach (var n in _result.Items)
+                    {
+                        <tr>
+                            <td>@n.Title</td>
+                            <td>@n.Category</td>
+                            <td><span class="badge @(n.Published?"bg-success":"bg-secondary")">@(n.Published?"Yes":"No")</span></td>
+                            <td>@n.CreatedAt.ToString("yyyy-MM-dd")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <Pagination CurrentPage="_page" TotalItems="_result.Total" PageSize="20" OnPageChange="LoadPage" />
+    }
+</div>
+@code {
+    private PagedResult<NewsDto>? _result; private int _page=1;
+    protected override async Task OnInitializedAsync() => await LoadPage(1);
+    private async Task LoadPage(int p) { _page=p; _result = await Api.GetAdminNewsAsync(p); }
+}

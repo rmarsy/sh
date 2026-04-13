@@ -1,0 +1,84 @@
+@page "/pvp-ranking"
+@rendermode InteractiveServer
+@layout MainLayout
+@inject ApiService Api
+
+<PageTitle>PvP Ranking - Shaiya</PageTitle>
+
+<div class="container py-5">
+    <h1 class="sh-page-title">PvP Ranking</h1>
+
+    @if (_loading)
+    {
+        <div class="sh-loading">Loading...</div>
+    }
+    else if (_result != null)
+    {
+        <div class="sh-table-container">
+            <table class="table sh-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Character</th>
+                        <th>Level</th>
+                        <th>Job</th>
+                        <th>Kills</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ var rank = (_currentPage - 1) * 20 + 1; }
+                    @foreach (var c in _result.Items)
+                    {
+                        <tr>
+                            <td><span class="sh-rank">@rank</span></td>
+                            <td><strong class="sh-gold">@c.CharName</strong></td>
+                            <td>@c.Level</td>
+                            <td>@GetJobName(c.Job)</td>
+                            <td><span class="sh-kills">@c.K1</span></td>
+                            <td>
+                                @if (c.LoginStatus)
+                                {
+                                    <span class="badge bg-success">Online</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Offline</span>
+                                }
+                            </td>
+                        </tr>
+                        rank++;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <Pagination CurrentPage="_currentPage" TotalItems="_result.Total" PageSize="20" OnPageChange="LoadPage" />
+    }
+</div>
+
+@code {
+    private PagedResult<CharacterDto>? _result;
+    private bool _loading = true;
+    private int _currentPage = 1;
+
+    protected override async Task OnInitializedAsync() => await LoadPage(1);
+
+    private async Task LoadPage(int page)
+    {
+        _loading = true;
+        _currentPage = page;
+        _result = await Api.GetPvpRankingAsync(page);
+        _loading = false;
+    }
+
+    private static string GetJobName(short job) => job switch
+    {
+        1 => "Fighter",
+        2 => "Defender",
+        3 => "Ranger",
+        4 => "Archer",
+        5 => "Mage",
+        6 => "Priest",
+        _ => $"Job {job}"
+    };
+}

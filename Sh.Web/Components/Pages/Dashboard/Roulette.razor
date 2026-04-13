@@ -1,0 +1,56 @@
+@page "/dashboard/roulette"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Roulette - Shaiya</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Lucky Roulette</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    @if (_roulette != null)
+    {
+        <div class="sh-card text-center">
+            <h4 class="sh-gold">@_roulette.Info.Name</h4>
+            <p>Cost per spin: <strong class="sh-gold">@_roulette.Info.CostPerSpin @_roulette.Info.Currency</strong></p>
+            <div class="row g-2 mb-4 justify-content-center">
+                @foreach (var p in _roulette.Prizes)
+                {
+                    <div class="col-md-2 col-4">
+                        <div class="sh-prize-card @(_lastPrize?.Id == p.Id ? "sh-prize-winner" : "")">
+                            <div class="sh-prize-name small">@p.Name</div>
+                            @if (p.Points > 0) { <div class="sh-gold small">+@p.Points pts</div> }
+                        </div>
+                    </div>
+                }
+            </div>
+            <select class="form-select sh-input mb-3 w-auto mx-auto" @bind="_selectedChar">
+                <option value="0">Select Character</option>
+                @foreach (var c in _characters) { <option value="@c.CharId">@c.CharName</option> }
+            </select>
+            <button class="btn sh-btn-gold btn-lg" @onclick="DoSpin" disabled="@_spinning">
+                @if (_spinning) { <span class="spinner-border spinner-border-sm me-2"></span> }
+                Spin!
+            </button>
+        </div>
+    }
+</div>
+@code {
+    private RouletteDto? _roulette; private RoulettePrizeDto? _lastPrize;
+    private List<CharacterDto> _characters = []; private int _selectedChar; private bool _spinning;
+    private string? _msg; private string _msgType = "success";
+    protected override async Task OnInitializedAsync()
+    {
+        _roulette = await Api.GetRouletteAsync();
+        var dash = await Api.GetDashboardAsync();
+        if (dash != null) _characters = dash.Characters;
+    }
+    private async Task DoSpin()
+    {
+        if (_roulette == null || _selectedChar == 0) { _msg = "Select a character."; _msgType = "error"; return; }
+        _spinning = true;
+        var (s, m, r) = await Api.SpinAsync(_roulette.Info.Id, _selectedChar);
+        if (s && r != null) _lastPrize = r.Prize;
+        _msg = s ? $"You won: {r?.Prize.Name}!" : m; _msgType = s ? "success" : "error"; _spinning = false;
+    }
+}

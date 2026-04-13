@@ -1,0 +1,41 @@
+@page "/dashboard/profile"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Profile - Shaiya</PageTitle>
+
+<div class="container py-4">
+    <h1 class="sh-page-title">Profile Settings</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="sh-card">
+                <h5 class="sh-card-title">Change Password</h5>
+                <EditForm Model="_pwModel" OnValidSubmit="ChangePassword">
+                    <div class="mb-3"><label class="form-label">Current Password</label>
+                        <InputText @bind-Value="_pwModel.Current" type="password" class="form-control sh-input" /></div>
+                    <div class="mb-3"><label class="form-label">New Password</label>
+                        <InputText @bind-Value="_pwModel.New" type="password" class="form-control sh-input" /></div>
+                    <div class="mb-3"><label class="form-label">Confirm New Password</label>
+                        <InputText @bind-Value="_pwModel.Confirm" type="password" class="form-control sh-input" /></div>
+                    <button type="submit" class="btn sh-btn-gold" disabled="@_loading">Save</button>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private readonly PwModel _pwModel = new();
+    private string? _msg; private string _msgType = "success"; private bool _loading;
+    private async Task ChangePassword()
+    {
+        if (_pwModel.New != _pwModel.Confirm) { _msg = "Passwords do not match."; _msgType = "error"; return; }
+        _loading = true;
+        var (s, m) = await Api.ChangePasswordAsync(_pwModel.Current, _pwModel.New);
+        _msg = m; _msgType = s ? "success" : "error"; _loading = false;
+    }
+    private class PwModel { public string Current{get;set;}=""; public string New{get;set;}=""; public string Confirm{get;set;}=""; }
+}

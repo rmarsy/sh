@@ -1,0 +1,37 @@
+@page "/dashboard/battle-pass"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Battle Pass - Shaiya</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Battle Pass - Season @(_data?.Season)</h1>
+    @if (_data?.UserProgress != null)
+    {
+        <div class="sh-card mb-4">
+            <div class="row">
+                <div class="col"><strong>Level:</strong> @_data.UserProgress.CurrentLevel</div>
+                <div class="col"><strong>Points:</strong> <span class="sh-gold">@_data.UserProgress.Points</span></div>
+            </div>
+        </div>
+    }
+    <div class="row g-3">
+        @foreach (var lvl in _data?.Levels ?? [])
+        {
+            var unlocked = _data?.UserProgress?.CurrentLevel >= lvl.Level;
+            <div class="col-md-3 col-6">
+                <div class="sh-card text-center @(unlocked ? "sh-unlocked" : "sh-locked")">
+                    <div class="fw-bold sh-gold">Lv. @lvl.Level</div>
+                    <div class="small">@lvl.RewardName</div>
+                    <div class="small text-muted">@lvl.PointsRequired pts</div>
+                    @if (unlocked) { <span class="badge bg-success mt-1">Unlocked</span> }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@code {
+    private BattlePassDto? _data;
+    protected override async Task OnInitializedAsync() => _data = await Api.GetBattlePassAsync();
+}
