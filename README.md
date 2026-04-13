@@ -53,21 +53,29 @@ A Blazor Web App + ASP.NET Core Web API conversion of the [shinertia](https://gi
 
 All configuration is driven by environment variables so no file edits are needed.
 
+> **Note:** SQL Server must be running on your host machine. Docker containers
+> reach it via `host.docker.internal`. On Linux you may need to add
+> `--add-host=host.docker.internal:host-gateway` or pass it in the compose file
+> if `host.docker.internal` is not resolved automatically.
+
 ### Development (hot reload)
 
 `docker-compose.override.yml` is automatically merged when you run `docker compose up`.
 It targets the `dev` build stage (SDK image + `dotnet watch`) and mounts your source
 directories so code changes are reflected without rebuilding the image.
 
+By default the override uses the `Shaiya` user with password `Shaiya123`. To use
+your own credentials, pass them via `.env.dev`:
+
 ```bash
-docker compose up --build
+docker compose --env-file .env.dev up --build
 ```
 
 | Service | URL |
 |---------|-----|
 | Sh.Web  | <http://localhost:5001> |
 | Sh.Api  | <http://localhost:5000> |
-| SQL Server | `localhost,1433` |
+| Sh.Api Swagger | <http://localhost:5000/swagger> |
 
 ### Production
 
@@ -116,6 +124,12 @@ docker compose up --build
    # Terminal 2
    cd Sh.Web && dotnet run
    ```
+
+   | Service | HTTP URL | HTTPS URL |
+   |---------|----------|-----------|
+   | Sh.Api  | <http://localhost:5154> | <https://localhost:7115> |
+   | Sh.Api Swagger | <http://localhost:5154/swagger> | <https://localhost:7115/swagger> |
+   | Sh.Web  | <http://localhost:5068> | <https://localhost:7127> |
 
 ---
 
