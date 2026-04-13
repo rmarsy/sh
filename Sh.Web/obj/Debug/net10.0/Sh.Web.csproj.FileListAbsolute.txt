@@ -68,8 +68,6 @@
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/11y2i8equv-{0}-63fj8s7r0e-63fj8s7r0e.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/i1i7e3acqs-{0}-0j3bgjxly4-0j3bgjxly4.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/90pgu5agmw-{0}-abdmv1u4y3-abdmv1u4y3.gz
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/lxwkdc54tb-{0}-b9228eflpl-b9228eflpl.gz
-/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/gfj13pigtq-{0}-2tj1sjhksk-2tj1sjhksk.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.build.json
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/staticwebassets.development.json
@@ -123,3 +121,4 @@
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/5uc9i77l87-{0}-wwtlhwmfe5-wwtlhwmfe5.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/cl3jksdo6n-{0}-6j6lcvcgil-6j6lcvcgil.gz
 /home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/4azqw68c23-{0}-6j6lcvcgil-6j6lcvcgil.gz
+/home/runner/work/sh/sh/Sh.Web/obj/Debug/net10.0/compressed/wppp038mex-{0}-8wd3kpn7iv-8wd3kpn7iv.gz
