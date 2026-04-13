@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "QD/lNO1oEgE=",
+  "success": true,
+  "projectFilePath": "/home/runner/work/sh/sh/Sh.Web/Sh.Web.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.5/microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.aspnetcore.authentication.cookies/2.1.2/microsoft.aspnetcore.authentication.cookies.2.1.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.AspNetCore.Authentication.Cookies will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "/home/runner/work/sh/sh/Sh.Web/Sh.Web.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/runner/work/sh/sh/Sh.Web/Sh.Web.csproj",
+      "libraryId": "Microsoft.AspNetCore.Authentication.Cookies",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

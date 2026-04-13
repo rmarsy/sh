@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Sh.Api/Sh.Api.csproj" />
+  <Project Path="Sh.Web/Sh.Web.csproj" />
+</Solution>
