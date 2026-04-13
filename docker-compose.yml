@@ -1,20 +1,4 @@
 services:
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    environment:
-      ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
-    ports:
-      - "1433:1433"
-    volumes:
-      - sqlserver-data:/var/opt/mssql
-    healthcheck:
-      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U SA -P \"$$MSSQL_SA_PASSWORD\" -Q 'SELECT 1' -No || exit 1"]
-      interval: 15s
-      timeout: 10s
-      retries: 10
-      start_period: 30s
-
   sh-api:
     build:
       context: .
@@ -23,10 +7,10 @@ services:
       - "5000:8080"
     environment:
       ASPNETCORE_HTTP_PORTS: "8080"
-      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=PS_WebSite;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
-      ConnectionStrings__UserConnection: "Server=sqlserver,1433;Database=PS_UserData;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
-      ConnectionStrings__GameConnection: "Server=sqlserver,1433;Database=PS_GameData;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
-      ConnectionStrings__GameLogConnection: "Server=sqlserver,1433;Database=PS_GameLog;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__DefaultConnection: "Server=host.docker.internal,1433;Database=PS_WebSite;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__UserConnection: "Server=host.docker.internal,1433;Database=PS_UserData;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__GameConnection: "Server=host.docker.internal,1433;Database=PS_GameData;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
+      ConnectionStrings__GameLogConnection: "Server=host.docker.internal,1433;Database=PS_GameLog;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
       Jwt__Key: "${JWT_KEY}"
       Jwt__Issuer: "Sh.Api"
       Jwt__Audience: "Sh.Web"
@@ -37,9 +21,6 @@ services:
       Turnstile__Enabled: "${TURNSTILE_ENABLED:-false}"
       ApiKey__HeaderName: "X-Api-Key"
       ApiKey__Keys__0: "${API_KEY}"
-    depends_on:
-      sqlserver:
-        condition: service_healthy
 
   sh-web:
     build:
@@ -53,6 +34,3 @@ services:
       Turnstile__SiteKey: "${TURNSTILE_SITE_KEY:-}"
     depends_on:
       - sh-api
-
-volumes:
-  sqlserver-data:
