@@ -25,13 +25,13 @@ public class User
     public bool Admin { get; set; }
 
     [Column("adminlevel")]
-    public int AdminLevel { get; set; }
+    public byte AdminLevel { get; set; }
 
     [Column("status")]
     public short Status { get; set; }
 
     [Column("leave")]
-    public int Leave { get; set; }
+    public byte Leave { get; set; }
 
     [Column("leavedate")]
     public DateTime? LeaveDate { get; set; }
