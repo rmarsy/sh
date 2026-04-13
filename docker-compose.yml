@@ -1,10 +1,29 @@
 services:
+  traefik:
+    image: traefik:v2.11
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik-letsencrypt:/letsencrypt
+    restart: unless-stopped
+
   sh-api:
     build:
       context: .
       dockerfile: Sh.Api/Dockerfile
-    ports:
-      - "5000:8080"
     environment:
       ASPNETCORE_HTTP_PORTS: "8080"
       ConnectionStrings__DefaultConnection: "Server=host.docker.internal,1433;Database=PS_WebSite;User Id=${MSSQL_USER};Password=${MSSQL_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=true"
@@ -15,22 +34,37 @@ services:
       Jwt__Issuer: "Sh.Api"
       Jwt__Audience: "Sh.Web"
       Jwt__ExpiryMinutes: "120"
-      Cors__AllowedOrigins__0: "${WEB_ORIGIN:-http://localhost:5001}"
+      Cors__AllowedOrigins__0: "https://${WEB_DOMAIN}"
       Turnstile__SiteKey: "${TURNSTILE_SITE_KEY:-}"
       Turnstile__SecretKey: "${TURNSTILE_SECRET_KEY:-}"
       Turnstile__Enabled: "${TURNSTILE_ENABLED:-false}"
       ApiKey__HeaderName: "X-Api-Key"
       ApiKey__Keys__0: "${API_KEY}"
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.sh-api.rule: "Host(`${API_DOMAIN}`)"
+      traefik.http.routers.sh-api.entrypoints: "websecure"
+      traefik.http.routers.sh-api.tls.certresolver: "letsencrypt"
+      traefik.http.services.sh-api.loadbalancer.server.port: "8080"
+    depends_on:
+      - traefik
 
   sh-web:
     build:
       context: .
       dockerfile: Sh.Web/Dockerfile
-    ports:
-      - "5001:8080"
     environment:
       ASPNETCORE_HTTP_PORTS: "8080"
       ApiBaseUrl: "http://sh-api:8080"
       Turnstile__SiteKey: "${TURNSTILE_SITE_KEY:-}"
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.sh-web.rule: "Host(`${WEB_DOMAIN}`)"
+      traefik.http.routers.sh-web.entrypoints: "websecure"
+      traefik.http.routers.sh-web.tls.certresolver: "letsencrypt"
+      traefik.http.services.sh-web.loadbalancer.server.port: "8080"
     depends_on:
       - sh-api
+
+volumes:
+  traefik-letsencrypt:
