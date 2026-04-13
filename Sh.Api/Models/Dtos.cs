@@ -1,8 +1,8 @@
 namespace Sh.Api.Models;
 
 public record LoginRequest(string Username, string Password, string? TurnstileToken);
-public record RegisterRequest(string Username, string Password, string Email, string TurnstileToken);
-public record ForgotPasswordRequest(string Username, string Email, string TurnstileToken);
+public record RegisterRequest(string Username, string Password, string TurnstileToken);
+public record ForgotPasswordRequest(string Username, string SecurityAnswer, string TurnstileToken);
 public record ResetPasswordRequest(string Token, string NewPassword);
 public record ChangePasswordRequest(string CurrentPassword, string NewPassword);
 public record SecurityQuestionRequest(string Question, string Answer);
@@ -16,7 +16,6 @@ public class UserDto
 {
     public int Id { get; set; }
     public string Username { get; set; } = string.Empty;
-    public string? Email { get; set; }
     public bool Admin { get; set; }
     public int AdminLevel { get; set; }
     public int Point { get; set; }

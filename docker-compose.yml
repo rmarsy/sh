@@ -37,6 +37,8 @@ services:
       traefik.http.routers.sh-api.rule: "Host(`${API_DOMAIN}`)"
       traefik.http.routers.sh-api.entrypoints: "web"
       traefik.http.services.sh-api.loadbalancer.server.port: "8080"
+    volumes:
+      - sh-api-dp-keys:/root/.aspnet/DataProtection-Keys
     depends_on:
       - traefik
 
@@ -53,5 +55,12 @@ services:
       traefik.http.routers.sh-web.rule: "Host(`${WEB_DOMAIN}`)"
       traefik.http.routers.sh-web.entrypoints: "web"
       traefik.http.services.sh-web.loadbalancer.server.port: "8080"
+    volumes:
+      - sh-web-dp-keys:/root/.aspnet/DataProtection-Keys
     depends_on:
       - sh-api
+
+volumes:
+  traefik-letsencrypt:
+  sh-api-dp-keys:
+  sh-web-dp-keys:

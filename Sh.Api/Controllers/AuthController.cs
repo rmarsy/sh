@@ -52,7 +52,7 @@ public class AuthController(AuthService authService, TurnstileService turnstileS
         var valid = await turnstileService.VerifyAsync(request.TurnstileToken, ip);
         if (!valid) return BadRequest(ApiResponse<object>.Fail("CAPTCHA verification failed."));
 
-        var (success, message) = await authService.RegisterAsync(request.Username, request.Password, request.Email, ip);
+        var (success, message) = await authService.RegisterAsync(request.Username, request.Password, ip);
         if (!success) return BadRequest(ApiResponse<object>.Fail(message));
 
         return Ok(ApiResponse<object>.Ok(null, message));
@@ -67,7 +67,7 @@ public class AuthController(AuthService authService, TurnstileService turnstileS
         var valid = await turnstileService.VerifyAsync(request.TurnstileToken, ip);
         if (!valid) return BadRequest(ApiResponse<object>.Fail("CAPTCHA verification failed."));
 
-        await authService.GenerateResetTokenAsync(request.Username, request.Email);
+        await authService.GenerateResetTokenAsync(request.Username, request.SecurityAnswer);
         return Ok(ApiResponse<object>.Ok(null, "If an account was found, a reset link has been sent."));
     }
 
