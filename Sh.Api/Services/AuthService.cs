@@ -20,19 +20,15 @@ public class AuthService(UserDbContext userDb, IConfiguration configuration)
         return user;
     }
 
-    public async Task<(bool Success, string Message)> RegisterAsync(string username, string password, string? email, string? ip)
+    public async Task<(bool Success, string Message)> RegisterAsync(string username, string password, string? ip)
     {
         if (await userDb.Users.AnyAsync(u => u.UserId == username))
             return (false, "Username already taken.");
-
-        if (!string.IsNullOrEmpty(email) && await userDb.Users.AnyAsync(u => u.Email == email))
-            return (false, "Email already registered.");
 
         var user = new User
         {
             UserId = username,
             Pw = BCrypt.Net.BCrypt.HashPassword(password),
-            Email = email,
             JoinDate = DateTime.UtcNow,
             Status = 0,
             UserType = "N",
@@ -46,10 +42,10 @@ public class AuthService(UserDbContext userDb, IConfiguration configuration)
         return (true, "Registration successful.");
     }
 
-    public async Task<(bool Success, string Message, string? Token)> GenerateResetTokenAsync(string username, string email)
+    public async Task<(bool Success, string Message, string? Token)> GenerateResetTokenAsync(string username, string securityAnswer)
     {
         var user = await userDb.Users.FirstOrDefaultAsync(u =>
-            u.UserId == username && u.Email == email);
+            u.UserId == username && u.SecurityAnswer != null && u.SecurityAnswer == securityAnswer.ToLower());
 
         if (user == null)
             return (false, "No account found with those credentials.", null);
@@ -109,7 +105,6 @@ public class AuthService(UserDbContext userDb, IConfiguration configuration)
     {
         Id = user.UserUid,
         Username = user.UserId,
-        Email = user.Email,
         Admin = user.Admin,
         AdminLevel = user.AdminLevel,
         Point = user.Point,

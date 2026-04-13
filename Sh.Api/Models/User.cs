@@ -50,10 +50,6 @@ public class User
     [Column("point")]
     public int Point { get; set; }
 
-    [Column("email")]
-    [MaxLength(255)]
-    public string? Email { get; set; }
-
     [Column("securityquestion")]
     [MaxLength(255)]
     public string? SecurityQuestion { get; set; }

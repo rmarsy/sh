@@ -21,7 +21,6 @@ public class ProfileController(UserDbContext userDb) : ControllerBase
         return Ok(ApiResponse<object>.Ok(new
         {
             user.UserId,
-            user.Email,
             user.SecurityQuestion,
             user.JoinDate,
             user.Point,
@@ -57,18 +56,5 @@ public class ProfileController(UserDbContext userDb) : ControllerBase
         await userDb.SaveChangesAsync();
 
         return Ok(ApiResponse<object>.Ok(null, "Security question updated."));
-    }
-
-    [HttpPut("email")]
-    public async Task<IActionResult> UpdateEmail([FromBody] string email)
-    {
-        var userUid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        var user = await userDb.Users.FindAsync(userUid);
-        if (user == null) return Unauthorized();
-
-        user.Email = email;
-        await userDb.SaveChangesAsync();
-
-        return Ok(ApiResponse<object>.Ok(null, "Email updated."));
     }
 }

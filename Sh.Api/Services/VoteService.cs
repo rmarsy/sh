@@ -79,5 +79,39 @@ public class VoteService(AppDbContext db, UserDbContext userDb)
         return (true, $"You received {site.PointsReward} vote points!", user.Vp);
     }
 
+    public async Task<(bool Success, string Message, int NewBalance)> ProcessExternalVoteAsync(int userUid, string voteSite, string? ip, string? secret)
+    {
+        var site = VoteSites.FirstOrDefault(s => s.Name == voteSite);
+        if (site == null) throw new InvalidOperationException("Unknown vote site.");
+
+        var now = DateTime.UtcNow;
+        var lastVote = await db.Votes
+            .Where(v => v.UserUid == userUid && v.VoteSite == voteSite)
+            .OrderByDescending(v => v.VotedAt)
+            .FirstOrDefaultAsync();
+
+        if (lastVote != null && lastVote.VotedAt.AddHours(12) > now)
+            throw new InvalidOperationException("Vote cooldown not elapsed.");
+
+        var user = await userDb.Users.FindAsync(userUid);
+        if (user == null) throw new InvalidOperationException("User not found.");
+
+        user.Vp += site.PointsReward;
+
+        var vote = new Vote
+        {
+            UserUid = userUid,
+            VoteSite = voteSite,
+            VotedAt = now,
+            PointsAwarded = site.PointsReward
+        };
+
+        db.Votes.Add(vote);
+        await db.SaveChangesAsync();
+        await userDb.SaveChangesAsync();
+
+        return (true, $"Vote processed for {voteSite}.", user.Vp);
+    }
+
     private record VoteSiteConfig(string Name, string Url, int PointsReward);
 }
