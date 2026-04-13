@@ -58,58 +58,145 @@ All configuration is driven by environment variables so no file edits are needed
 > `--add-host=host.docker.internal:host-gateway` or pass it in the compose file
 > if `host.docker.internal` is not resolved automatically.
 
-### Development (hot reload)
+### Development (hot reload + HTTPS)
 
 `docker-compose.override.yml` is automatically merged when you run `docker compose up`.
 It targets the `dev` build stage (SDK image + `dotnet watch`) and mounts your source
 directories so code changes are reflected without rebuilding the image.
 
 A Traefik v2 reverse proxy routes `web.localhost` → Sh.Web and `api.localhost` → Sh.Api
-over plain HTTP on port 80. Most modern browsers and operating systems resolve `*.localhost`
+over **both HTTP and HTTPS**. Most modern browsers and operating systems resolve `*.localhost`
 sub-domains to `127.0.0.1` automatically (RFC 6761).
 
-By default the override uses the `Shaiya` user with password `Shaiya123`. To use
+#### Step 1 — Install mkcert and generate local certificates
+
+[mkcert](https://github.com/FiloSottile/mkcert) creates a local Certificate Authority (CA)
+that your OS and browser trust, so `https://web.localhost` gets a green padlock without
+any security warnings.
+
+**macOS (Homebrew):**
+```bash
+brew install mkcert
+mkcert -install          # installs the local CA into system/browser trust stores
+```
+
+**Linux:**
+```bash
+# Install nss-tools for Firefox support (optional)
+sudo apt install libnss3-tools   # Debian/Ubuntu
+# Download the mkcert binary from https://github.com/FiloSottile/mkcert/releases
+sudo install mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+mkcert -install
+```
+
+**Windows (Chocolatey):**
+```powershell
+choco install mkcert
+mkcert -install
+```
+
+#### Step 2 — Generate certificates for the local domains
+
+Run this from the root of the repository:
+
+```bash
+mkdir -p certs
+mkcert -cert-file certs/local.crt -key-file certs/local.key web.localhost api.localhost
+```
+
+This creates `certs/local.crt` and `certs/local.key` (the `certs/` directory is git-ignored).
+Traefik will pick them up via `traefik/dynamic.dev.yml`, which is already configured.
+
+#### Step 3 — Start the stack
+
+By default the override uses the `Shaiya` SQL Server user with password `Shaiya123`. To use
 your own credentials, pass them via `.env.dev`:
 
 ```bash
 docker compose --env-file .env.dev up --build
 ```
 
+Or with the default credentials:
+
+```bash
+docker compose up --build
+```
+
 | Service | URL |
 |---------|-----|
-| Sh.Web  | <http://web.localhost> |
-| Sh.Api  | <http://api.localhost> |
-| Sh.Api Swagger | <http://api.localhost/swagger> |
+| Sh.Web  | <https://web.localhost> |
+| Sh.Api  | <https://api.localhost> |
+| Sh.Api Swagger | <https://api.localhost/swagger> |
 | Traefik dashboard | <http://localhost:8081> |
-| Sh.Web (direct) | <http://localhost:5001> |
-| Sh.Api (direct) | <http://localhost:5000> |
+| Sh.Web (direct, HTTP) | <http://localhost:5001> |
+| Sh.Api (direct, HTTP) | <http://localhost:5000> |
+
+> **Note on `.env.dev`:** If you override `WEB_ORIGIN` in `.env.dev`, set it to
+> `https://web.localhost` so the API allows CORS requests from the Blazor app.
+
+> **Note on Linux host resolution:** If `web.localhost` / `api.localhost` do not resolve
+> automatically, add these entries to `/etc/hosts`:
+> ```
+> 127.0.0.1  web.localhost
+> 127.0.0.1  api.localhost
+> ```
+
+---
 
 ### Production
 
 Traefik v2 **is** used in production. It handles HTTPS termination and automatic TLS
 certificate provisioning via Let's Encrypt, so no external reverse proxy is needed.
 
-1. Copy `.env.example` to `.env` and fill in all values:
-   ```bash
-   cp .env.example .env
-   ```
-   Key variables:
-   - `ACME_EMAIL` — email for Let's Encrypt renewal notices
-   - `API_DOMAIN` — public hostname for the API (e.g. `api.yourdomain.com`)
-   - `WEB_DOMAIN` — public hostname for the web app (e.g. `yourdomain.com`)
-   - `WEB_ORIGIN` — full public URL of Sh.Web (e.g. `https://yourdomain.com`), used for CORS
+#### Step 1 — Point your DNS records
 
-2. Start the stack with the production overlay:
-   ```bash
-   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
-   ```
-   The production overlay (`docker-compose.prod.yml`) adds:
-   - Traefik HTTPS entrypoint on port 443 with Let's Encrypt ACME
-   - Automatic HTTP → HTTPS redirect
-   - TLS cert resolver labels on both services
+Create A (or AAAA) records for both your API domain and web domain pointing to your
+server's public IP before starting the stack. Let's Encrypt requires the domain to be
+publicly reachable for the HTTP-01 challenge.
 
-> **Ports required:** 80 and 443 must be open and reachable from the internet for
-> Let's Encrypt HTTP-01 challenge to succeed.
+#### Step 2 — Create and fill in the `.env` file
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and set **all** variables:
+
+| Variable | Description |
+|----------|-------------|
+| `MSSQL_USER` | SQL Server application user |
+| `MSSQL_PASSWORD` | SQL Server application user password |
+| `JWT_KEY` | Random string ≥ 32 characters — **must change** |
+| `API_KEY` | Random string for launcher authentication — **must change** |
+| `ACME_EMAIL` | Your email for Let's Encrypt renewal notices |
+| `API_DOMAIN` | Public hostname for the API (e.g. `api.yourdomain.com`) |
+| `WEB_DOMAIN` | Public hostname for the web app (e.g. `yourdomain.com`) |
+| `WEB_ORIGIN` | Full public URL of Sh.Web — `https://<WEB_DOMAIN>` (used for CORS) |
+| `TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key |
+| `TURNSTILE_ENABLED` | `true` to enforce bot protection |
+
+#### Step 3 — Open firewall ports
+
+Ports **80** and **443** must be open and reachable from the internet for the
+Let's Encrypt HTTP-01 challenge to succeed and for HTTPS to work.
+
+#### Step 4 — Start the stack with the production overlay
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+```
+
+The production overlay (`docker-compose.prod.yml`) adds:
+- Traefik HTTPS entrypoint on port 443 with Let's Encrypt ACME
+- Automatic HTTP → HTTPS redirect
+- TLS cert resolver labels on both services
+
+TLS certificates are stored in the `traefik-letsencrypt` Docker volume and survive
+container restarts.
+
+> **Renewing certificates:** Let's Encrypt certificates are valid for 90 days. Traefik
+> automatically renews them before expiry as long as ports 80 and 443 remain open.
 
 ---
 

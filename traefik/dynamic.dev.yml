@@ -1,0 +1,7 @@
+# Traefik dynamic configuration for local development.
+# Tells Traefik where to find the mkcert-generated TLS certificate.
+# The /certs directory is mounted from the local ./certs folder.
+tls:
+  certificates:
+    - certFile: /certs/local.crt
+      keyFile: /certs/local.key
