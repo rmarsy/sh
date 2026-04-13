@@ -11,6 +11,7 @@ using Sh.Api.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddOpenApi();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -97,10 +98,14 @@ builder.Services.AddScoped<ServerManager>();
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+    app.MapOpenApi();
+
 app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseHttpsRedirection();
 app.UseCors("AllowedOrigins");
 app.UseRateLimiter();
+app.UseMiddleware<ApiKeyMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

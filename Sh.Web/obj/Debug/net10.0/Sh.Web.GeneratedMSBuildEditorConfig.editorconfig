@@ -70,10 +70,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BdXRoL1Jlc2V0UGFzc3dvcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/sh/sh/Sh.Web/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/runner/work/sh/sh/Sh.Web/Components/Pages/Dashboard/BattlePass.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9EYXNoYm9hcmQvQmF0dGxlUGFzcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -146,10 +142,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZXJtc09mU2VydmljZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/runner/work/sh/sh/Sh.Web/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/runner/work/sh/sh/Sh.Web/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -169,10 +161,6 @@ build_metadata.AdditionalFiles.CssScope =
 [/home/runner/work/sh/sh/Sh.Web/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-3o4hc9h2tx
-
-[/home/runner/work/sh/sh/Sh.Web/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-85wspk7o46
 
 [/home/runner/work/sh/sh/Sh.Web/Components/Layout/ReconnectModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvUmVjb25uZWN0TW9kYWwucmF6b3I=
