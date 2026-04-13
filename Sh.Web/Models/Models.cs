@@ -25,7 +25,6 @@ public class UserDto
 {
     public int Id { get; set; }
     public string Username { get; set; } = string.Empty;
-    public string? Email { get; set; }
     public bool Admin { get; set; }
     public int AdminLevel { get; set; }
     public int Point { get; set; }
@@ -237,7 +236,6 @@ public class PaymentDto
 public class ProfileDto
 {
     public string UserId { get; set; } = string.Empty;
-    public string? Email { get; set; }
     public string? SecurityQuestion { get; set; }
     public DateTime JoinDate { get; set; }
     public int Point { get; set; }

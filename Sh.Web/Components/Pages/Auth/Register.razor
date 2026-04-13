@@ -4,6 +4,7 @@
 @inject ApiService Api
 @inject NavigationManager Nav
 @inject IConfiguration Config
+@inject IJSRuntime JS
 
 <PageTitle>Register - Shaiya</PageTitle>
 
@@ -19,10 +20,6 @@
         <InputText @bind-Value="_model.Username" class="form-control sh-input" placeholder="Choose a username" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Email</label>
-        <InputText @bind-Value="_model.Email" type="email" class="form-control sh-input" placeholder="Your email address" />
-    </div>
-    <div class="mb-3">
         <label class="form-label">Password</label>
         <InputText @bind-Value="_model.Password" type="password" class="form-control sh-input" placeholder="Choose a password" />
     </div>
@@ -31,7 +28,7 @@
         <InputText @bind-Value="_model.ConfirmPassword" type="password" class="form-control sh-input" placeholder="Repeat your password" />
     </div>
     <div class="mb-3">
-        <div class="cf-turnstile" data-sitekey="@Config["Turnstile:SiteKey"]"></div>
+        <div id="cf-turnstile-register" class="cf-turnstile" data-sitekey="@Config["Turnstile:SiteKey"]" data-callback="onTurnstileRegister"></div>
     </div>
     <div class="d-grid mb-3">
         <button type="submit" class="btn sh-btn-gold" disabled="@_loading">
@@ -60,7 +57,8 @@
         }
         _loading = true;
         _error = null;
-        var (success, message) = await Api.RegisterAsync(_model.Username, _model.Password, _model.Email, "bypass");
+        var token = await JS.InvokeAsync<string?>("getTurnstileToken", "register") ?? string.Empty;
+        var (success, message) = await Api.RegisterAsync(_model.Username, _model.Password, token);
         if (success)
         {
             _success = message + " You can now login.";
@@ -70,6 +68,7 @@
         else
         {
             _error = message;
+            await JS.InvokeVoidAsync("resetTurnstile", "register");
         }
         _loading = false;
     }
@@ -77,7 +76,6 @@
     private class RegisterModel
     {
         public string Username { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string ConfirmPassword { get; set; } = string.Empty;
     }

@@ -20,7 +20,7 @@ public class AdminController(UserDbContext userDb, AppDbContext db, GameLogDbCon
 
         var query = userDb.Users.AsQueryable();
         if (!string.IsNullOrEmpty(search))
-            query = query.Where(u => u.UserId.Contains(search) || (u.Email != null && u.Email.Contains(search)));
+            query = query.Where(u => u.UserId.Contains(search));
 
         var total = await query.CountAsync();
         var users = await query
@@ -31,7 +31,6 @@ public class AdminController(UserDbContext userDb, AppDbContext db, GameLogDbCon
             {
                 Id = u.UserUid,
                 Username = u.UserId,
-                Email = u.Email,
                 Admin = u.Admin,
                 AdminLevel = u.AdminLevel,
                 Point = u.Point,

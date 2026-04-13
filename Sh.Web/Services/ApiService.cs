@@ -76,16 +76,16 @@ public class ApiService(IHttpClientFactory httpClientFactory, IHttpContextAccess
         return (result.Success, result.Message ?? string.Empty, result.Data);
     }
 
-    public async Task<(bool Success, string Message)> RegisterAsync(string username, string password, string email, string turnstileToken)
+    public async Task<(bool Success, string Message)> RegisterAsync(string username, string password, string turnstileToken)
     {
-        var result = await PostAsync<object>("api/auth/register", new { username, password, email, turnstileToken });
+        var result = await PostAsync<object>("api/auth/register", new { username, password, turnstileToken });
         if (result == null) return (false, "Connection error.");
         return (result.Success, result.Message ?? string.Empty);
     }
 
-    public async Task<(bool Success, string Message)> ForgotPasswordAsync(string username, string email, string turnstileToken)
+    public async Task<(bool Success, string Message)> ForgotPasswordAsync(string username, string securityAnswer, string turnstileToken)
     {
-        var result = await PostAsync<object>("api/auth/forgot-password", new { username, email, turnstileToken });
+        var result = await PostAsync<object>("api/auth/forgot-password", new { username, securityAnswer, turnstileToken });
         if (result == null) return (false, "Connection error.");
         return (result.Success, result.Message ?? "If an account was found, a reset link has been sent.");
     }
