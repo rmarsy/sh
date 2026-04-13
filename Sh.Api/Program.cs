@@ -102,7 +102,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 
 app.UseMiddleware<SecurityHeadersMiddleware>();
-app.UseHttpsRedirection();
 app.UseCors("AllowedOrigins");
 app.UseRateLimiter();
 app.UseMiddleware<ApiKeyMiddleware>();
