@@ -1,0 +1,25 @@
+@page "/dashboard/donate"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+
+<PageTitle>Donate - Shaiya</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Donate</h1>
+    <div class="row g-4">
+        @foreach (var (amount, points) in new[]{(5,500),(10,1100),(20,2500),(50,6500)})
+        {
+            <div class="col-md-3">
+                <div class="sh-card text-center">
+                    <div class="fs-2 sh-gold fw-bold">$@amount</div>
+                    <div class="text-muted">@points Shaiya Points</div>
+                    <div class="mt-3">
+                        <button class="btn sh-btn-gold w-100 mb-2">PayPal</button>
+                        <button class="btn sh-btn-outline w-100">Stripe</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <p class="text-muted small mt-4">Points are credited automatically after payment confirmation.</p>
+</div>

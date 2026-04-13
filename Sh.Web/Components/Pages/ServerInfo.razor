@@ -1,0 +1,78 @@
+@page "/server-info"
+@rendermode InteractiveServer
+@layout MainLayout
+@inject ApiService Api
+
+<PageTitle>Server Info - Shaiya</PageTitle>
+
+<div class="container py-5">
+    <h1 class="sh-page-title">Server Information</h1>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="sh-card">
+                <h4 class="sh-card-title">Server Status</h4>
+                @if (_status != null)
+                {
+                    <div class="sh-stat-badge @(_status.Online ? "online" : "offline") mb-3">
+                        <span class="sh-stat-dot"></span>
+                        @(_status.Online ? "Online" : "Offline")
+                    </div>
+                    @if (_status.Online)
+                    {
+                        <p>Players Online: <strong class="sh-gold">@_status.Players</strong></p>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="sh-card">
+                <h4 class="sh-card-title">Server Details</h4>
+                <ul class="list-unstyled">
+                    <li><strong>Version:</strong> EP4 5/5</li>
+                    <li><strong>Exp Rate:</strong> 10x</li>
+                    <li><strong>Drop Rate:</strong> 5x</li>
+                    <li><strong>Max Level:</strong> 180</li>
+                    <li><strong>Mode:</strong> Ultimate</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="sh-card">
+                <h4 class="sh-card-title">Features</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="list-unstyled">
+                            <li>✅ Anti-Cheat System</li>
+                            <li>✅ Custom Events</li>
+                            <li>✅ Vote Rewards</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-unstyled">
+                            <li>✅ Battle Pass</li>
+                            <li>✅ Web Shop</li>
+                            <li>✅ Item Mall</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-unstyled">
+                            <li>✅ PvP Ranking</li>
+                            <li>✅ Boss Tracker</li>
+                            <li>✅ Active Community</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private ServerStatusDto? _status;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await Api.GetAsync<ServerStatusDto>("api/public/server-status");
+        _status = result?.Data;
+    }
+}

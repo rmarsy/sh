@@ -1,0 +1,88 @@
+@page "/dashboard/shop"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Shop - Shaiya</PageTitle>
+
+<div class="container py-4">
+    <h1 class="sh-page-title">Item Shop</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    @if (_loading) { <div class="sh-loading">Loading...</div> }
+    else if (_shop != null)
+    {
+        <div class="row mb-4">
+            @foreach (var cat in _shop.Categories)
+            {
+                <div class="col-auto">
+                    <button class="btn @(_selectedCat == cat.Id ? "sh-btn-gold" : "sh-btn-outline") btn-sm"
+                            @onclick="() => _selectedCat = cat.Id">@cat.Name</button>
+                </div>
+            }
+        </div>
+        <div class="row g-3">
+            @foreach (var item in FilteredItems)
+            {
+                <div class="col-md-3">
+                    <div class="sh-shop-item">
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img src="@item.ImageUrl" alt="@item.Name" class="sh-item-img" />
+                        }
+                        <div class="sh-item-name">@item.Name</div>
+                        @if (!string.IsNullOrEmpty(item.Description))
+                        {
+                            <div class="sh-item-desc text-muted small">@item.Description</div>
+                        }
+                        <div class="sh-item-price sh-gold fw-bold">@item.Price @item.Currency</div>
+                        <button class="btn sh-btn-gold btn-sm w-100 mt-2"
+                                @onclick="() => SelectItem(item)">Buy</button>
+                    </div>
+                </div>
+            }
+        </div>
+        @if (_buyItem != null)
+        {
+            <div class="sh-modal-overlay" @onclick="() => _buyItem = null">
+                <div class="sh-modal" @onclick:stopPropagation>
+                    <h5>Purchase @_buyItem.Name</h5>
+                    <p>Cost: <strong class="sh-gold">@_buyItem.Price @_buyItem.Currency</strong></p>
+                    <select class="form-select sh-input mb-3" @bind="_selectedChar">
+                        <option value="0">Select Character</option>
+                        @foreach (var c in _characters)
+                        {
+                            <option value="@c.CharId">@c.CharName (Lv.@c.Level)</option>
+                        }
+                    </select>
+                    <button class="btn sh-btn-gold w-100" @onclick="DoPurchase" disabled="@_buying">
+                        @if (_buying) { <span class="spinner-border spinner-border-sm"></span> } else { <span>Confirm Purchase</span> }
+                    </button>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private ShopDto? _shop; private bool _loading=true; private int _selectedCat;
+    private ShopItemDto? _buyItem; private int _selectedChar; private bool _buying;
+    private string? _msg; private string _msgType="success";
+    private List<CharacterDto> _characters = [];
+    private IEnumerable<ShopItemDto> FilteredItems => _shop?.Items.Where(i => _selectedCat == 0 || i.CategoryId == _selectedCat) ?? [];
+    protected override async Task OnInitializedAsync()
+    {
+        _shop = await Api.GetShopAsync();
+        var dash = await Api.GetDashboardAsync();
+        if (dash != null) _characters = dash.Characters;
+        _loading = false;
+    }
+    private void SelectItem(ShopItemDto item) { _buyItem = item; _selectedChar = 0; }
+    private async Task DoPurchase()
+    {
+        if (_buyItem == null || _selectedChar == 0) { _msg = "Please select a character."; _msgType = "error"; return; }
+        _buying = true;
+        var (s, m, _) = await Api.PurchaseAsync(_buyItem.Id, _selectedChar, 1);
+        _msg = m; _msgType = s ? "success" : "error"; _buyItem = null; _buying = false;
+    }
+}

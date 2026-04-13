@@ -1,0 +1,84 @@
+@page "/register"
+@rendermode InteractiveServer
+@layout AuthLayout
+@inject ApiService Api
+@inject NavigationManager Nav
+@inject IConfiguration Config
+
+<PageTitle>Register - Shaiya</PageTitle>
+
+<h4 class="sh-auth-title">Create Account</h4>
+
+<Alert Message="@_error" Type="error" OnDismiss="() => _error = null" />
+<Alert Message="@_success" Type="success" OnDismiss="() => _success = null" />
+
+<EditForm Model="_model" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <div class="mb-3">
+        <label class="form-label">Username <small class="text-muted">(max 18 chars)</small></label>
+        <InputText @bind-Value="_model.Username" class="form-control sh-input" placeholder="Choose a username" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <InputText @bind-Value="_model.Email" type="email" class="form-control sh-input" placeholder="Your email address" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <InputText @bind-Value="_model.Password" type="password" class="form-control sh-input" placeholder="Choose a password" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <InputText @bind-Value="_model.ConfirmPassword" type="password" class="form-control sh-input" placeholder="Repeat your password" />
+    </div>
+    <div class="mb-3">
+        <div class="cf-turnstile" data-sitekey="@Config["Turnstile:SiteKey"]"></div>
+    </div>
+    <div class="d-grid mb-3">
+        <button type="submit" class="btn sh-btn-gold" disabled="@_loading">
+            @if (_loading) { <span class="spinner-border spinner-border-sm me-2"></span> }
+            Create Account
+        </button>
+    </div>
+</EditForm>
+
+<p class="text-center text-muted small">
+    Already have an account? <a href="/login" class="sh-auth-link">Login here</a>
+</p>
+
+@code {
+    private readonly RegisterModel _model = new();
+    private string? _error;
+    private string? _success;
+    private bool _loading;
+
+    private async Task HandleRegister()
+    {
+        if (_model.Password != _model.ConfirmPassword)
+        {
+            _error = "Passwords do not match.";
+            return;
+        }
+        _loading = true;
+        _error = null;
+        var (success, message) = await Api.RegisterAsync(_model.Username, _model.Password, _model.Email, "bypass");
+        if (success)
+        {
+            _success = message + " You can now login.";
+            await Task.Delay(2000);
+            Nav.NavigateTo("/login");
+        }
+        else
+        {
+            _error = message;
+        }
+        _loading = false;
+    }
+
+    private class RegisterModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string ConfirmPassword { get; set; } = string.Empty;
+    }
+}

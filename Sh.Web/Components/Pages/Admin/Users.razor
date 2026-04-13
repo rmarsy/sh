@@ -1,0 +1,41 @@
+@page "/admin/users"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Manage Users - Admin</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Manage Users</h1>
+    <div class="mb-3 d-flex gap-2">
+        <input class="form-control sh-input" @bind="_search" placeholder="Search username or email..." style="max-width:300px" />
+        <button class="btn sh-btn-gold" @onclick="() => LoadPage(1)">Search</button>
+    </div>
+    @if (_result != null)
+    {
+        <div class="sh-table-container">
+            <table class="table sh-table">
+                <thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Points</th><th>Status</th><th>Joined</th></tr></thead>
+                <tbody>
+                    @foreach (var u in _result.Items)
+                    {
+                        <tr>
+                            <td>@u.Id</td>
+                            <td class="sh-gold">@u.Username</td>
+                            <td>@u.Email</td>
+                            <td>@u.Point</td>
+                            <td><span class="badge @(u.Status==0?"bg-success":"bg-danger")">@(u.Status==0?"Active":"Banned")</span></td>
+                            <td>@u.JoinDate.ToString("yyyy-MM-dd")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <Pagination CurrentPage="_page" TotalItems="_result.Total" PageSize="20" OnPageChange="LoadPage" />
+    }
+</div>
+@code {
+    private PagedResult<AdminUserDto>? _result; private int _page = 1; private string _search = "";
+    protected override async Task OnInitializedAsync() => await LoadPage(1);
+    private async Task LoadPage(int p) { _page = p; _result = await Api.GetAdminUsersAsync(p, _search); }
+}

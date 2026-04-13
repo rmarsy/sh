@@ -1,0 +1,34 @@
+@page "/admin/settings"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Settings - Admin</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Site Settings</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    @if (_settings != null)
+    {
+        @foreach (var s in _settings)
+        {
+            <div class="sh-card mb-3">
+                <label class="form-label fw-bold">@s.Key</label>
+                @if (!string.IsNullOrEmpty(s.Description)) { <p class="text-muted small mb-1">@s.Description</p> }
+                <div class="d-flex gap-2">
+                    <input class="form-control sh-input" @bind="s.Value" />
+                    <button class="btn sh-btn-gold" @onclick="() => SaveSetting(s)">Save</button>
+                </div>
+            </div>
+        }
+    }
+</div>
+@code {
+    private List<SettingDto>? _settings; private string? _msg; private string _msgType="success";
+    protected override async Task OnInitializedAsync() => _settings = await Api.GetSettingsAsync();
+    private async Task SaveSetting(SettingDto s)
+    {
+        var r = await Api.PutAsync<SettingDto>($"api/admin/settings/{s.Key}", s.Value);
+        _msg = r?.Success == true ? "Saved." : "Error saving."; _msgType = r?.Success == true ? "success" : "error";
+    }
+}

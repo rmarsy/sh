@@ -1,0 +1,44 @@
+@page "/dashboard/vote"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Vote - Shaiya</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Vote for Us</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    @if (_vote != null)
+    {
+        <div class="row g-3">
+            @foreach (var s in _vote.Sites)
+            {
+                <div class="col-md-6">
+                    <div class="sh-card">
+                        <h5>@s.Name</h5>
+                        <p class="text-muted small">Reward: <strong class="sh-gold">@s.PointsReward Vote Points</strong></p>
+                        @if (!s.Voted)
+                        {
+                            <a href="@s.Url" target="_blank" class="btn sh-btn-gold btn-sm me-2">Vote Now</a>
+                            <button class="btn sh-btn-outline btn-sm" @onclick="() => Claim(s.Name)">Claim</button>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Voted - Next: @s.NextVoteTime?.ToString("HH:mm")</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+@code {
+    private VoteDto? _vote; private string? _msg; private string _msgType = "success";
+    protected override async Task OnInitializedAsync() => _vote = await Api.GetVoteStatusAsync();
+    private async Task Claim(string site)
+    {
+        var (s, m, _) = await Api.ClaimVoteAsync(site);
+        _msg = m; _msgType = s ? "success" : "error";
+        if (s) _vote = await Api.GetVoteStatusAsync();
+    }
+}

@@ -1,0 +1,35 @@
+@page "/dashboard/redeem"
+@rendermode InteractiveServer
+@layout MainLayout
+@attribute [Authorize]
+@inject ApiService Api
+
+<PageTitle>Redeem Code - Shaiya</PageTitle>
+<div class="container py-4">
+    <h1 class="sh-page-title">Redeem Code</h1>
+    <Alert Message="@_msg" Type="@_msgType" OnDismiss="() => _msg = null" />
+    <div class="sh-card" style="max-width:500px">
+        <div class="mb-3"><label class="form-label">Code</label>
+            <input class="form-control sh-input" @bind="_code" placeholder="Enter your code" /></div>
+        <div class="mb-3">
+            <select class="form-select sh-input" @bind="_selectedChar">
+                <option value="0">Select Character</option>
+                @foreach (var c in _characters) { <option value="@c.CharId">@c.CharName</option> }
+            </select>
+        </div>
+        <button class="btn sh-btn-gold w-100" @onclick="DoRedeem" disabled="@_loading">Redeem</button>
+    </div>
+</div>
+@code {
+    private string _code = ""; private int _selectedChar; private bool _loading;
+    private string? _msg; private string _msgType = "success";
+    private List<CharacterDto> _characters = [];
+    protected override async Task OnInitializedAsync() { var d = await Api.GetDashboardAsync(); if (d != null) _characters = d.Characters; }
+    private async Task DoRedeem()
+    {
+        if (string.IsNullOrWhiteSpace(_code) || _selectedChar == 0) { _msg = "Fill all fields."; _msgType = "error"; return; }
+        _loading = true;
+        var (s, m) = await Api.RedeemCodeAsync(_code, _selectedChar);
+        _msg = m; _msgType = s ? "success" : "error"; if (s) _code = ""; _loading = false;
+    }
+}

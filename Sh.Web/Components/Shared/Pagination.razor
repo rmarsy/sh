@@ -1,0 +1,35 @@
+@if (TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination sh-pagination justify-content-center">
+            <li class="page-item @(CurrentPage <= 1 ? "disabled" : "")">
+                <button class="page-link" @onclick="() => PageChanged(CurrentPage - 1)">‹</button>
+            </li>
+            @for (int i = Math.Max(1, CurrentPage - 2); i <= Math.Min(TotalPages, CurrentPage + 2); i++)
+            {
+                var p2 = i;
+                <li class="page-item @(p2 == CurrentPage ? "active" : "")">
+                    <button class="page-link" @onclick="() => PageChanged(p2)">@p2</button>
+                </li>
+            }
+            <li class="page-item @(CurrentPage >= TotalPages ? "disabled" : "")">
+                <button class="page-link" @onclick="() => PageChanged(CurrentPage + 1)">›</button>
+            </li>
+        </ul>
+    </nav>
+}
+
+@code {
+    [Parameter] public int CurrentPage { get; set; } = 1;
+    [Parameter] public int TotalItems { get; set; }
+    [Parameter] public int PageSize { get; set; } = 20;
+    [Parameter] public EventCallback<int> OnPageChange { get; set; }
+
+    private int TotalPages => (int)Math.Ceiling((double)TotalItems / PageSize);
+
+    private async Task PageChanged(int page)
+    {
+        if (page >= 1 && page <= TotalPages)
+            await OnPageChange.InvokeAsync(page);
+    }
+}
