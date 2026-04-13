@@ -64,6 +64,10 @@ All configuration is driven by environment variables so no file edits are needed
 It targets the `dev` build stage (SDK image + `dotnet watch`) and mounts your source
 directories so code changes are reflected without rebuilding the image.
 
+A Traefik v2 reverse proxy routes `web.localhost` → Sh.Web and `api.localhost` → Sh.Api
+over plain HTTP on port 80. Most modern browsers and operating systems resolve `*.localhost`
+sub-domains to `127.0.0.1` automatically (RFC 6761).
+
 By default the override uses the `Shaiya` user with password `Shaiya123`. To use
 your own credentials, pass them via `.env.dev`:
 
@@ -73,23 +77,39 @@ docker compose --env-file .env.dev up --build
 
 | Service | URL |
 |---------|-----|
-| Sh.Web  | <http://localhost:5001> |
-| Sh.Api  | <http://localhost:5000> |
-| Sh.Api Swagger | <http://localhost:5000/swagger> |
+| Sh.Web  | <http://web.localhost> |
+| Sh.Api  | <http://api.localhost> |
+| Sh.Api Swagger | <http://api.localhost/swagger> |
+| Traefik dashboard | <http://localhost:8081> |
+| Sh.Web (direct) | <http://localhost:5001> |
+| Sh.Api (direct) | <http://localhost:5000> |
 
 ### Production
+
+Traefik v2 **is** used in production. It handles HTTPS termination and automatic TLS
+certificate provisioning via Let's Encrypt, so no external reverse proxy is needed.
 
 1. Copy `.env.example` to `.env` and fill in all values:
    ```bash
    cp .env.example .env
    ```
-2. Start the stack (the override file is **not** used because you pass `-f` explicitly):
-   ```bash
-   docker compose -f docker-compose.yml up -d --build
-   ```
+   Key variables:
+   - `ACME_EMAIL` — email for Let's Encrypt renewal notices
+   - `API_DOMAIN` — public hostname for the API (e.g. `api.yourdomain.com`)
+   - `WEB_DOMAIN` — public hostname for the web app (e.g. `yourdomain.com`)
+   - `WEB_ORIGIN` — full public URL of Sh.Web (e.g. `https://yourdomain.com`), used for CORS
 
-> **Note:** The containers run on HTTP internally. For HTTPS in production, put a
-> reverse proxy (nginx, Traefik, Caddy, …) in front and terminate TLS there.
+2. Start the stack with the production overlay:
+   ```bash
+   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+   ```
+   The production overlay (`docker-compose.prod.yml`) adds:
+   - Traefik HTTPS entrypoint on port 443 with Let's Encrypt ACME
+   - Automatic HTTP → HTTPS redirect
+   - TLS cert resolver labels on both services
+
+> **Ports required:** 80 and 443 must be open and reachable from the internet for
+> Let's Encrypt HTTP-01 challenge to succeed.
 
 ---
 

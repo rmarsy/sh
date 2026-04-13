@@ -1,0 +1,33 @@
+# Production overrides — apply on top of docker-compose.yml:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# Enables HTTPS via Traefik + Let's Encrypt.  Requires a valid .env with
+# ACME_EMAIL, API_DOMAIN, WEB_DOMAIN, and WEB_ORIGIN set to the real domains.
+
+services:
+  traefik:
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "443:443"
+    volumes:
+      - traefik-letsencrypt:/letsencrypt
+
+  sh-api:
+    labels:
+      traefik.http.routers.sh-api.entrypoints: "websecure"
+      traefik.http.routers.sh-api.tls.certresolver: "letsencrypt"
+
+  sh-web:
+    labels:
+      traefik.http.routers.sh-web.entrypoints: "websecure"
+      traefik.http.routers.sh-web.tls.certresolver: "letsencrypt"
