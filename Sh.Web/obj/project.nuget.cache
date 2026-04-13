@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8yMggZqM7vM=",
+  "dgSpecHash": "uu8CGG8gGOs=",
   "success": true,
-  "projectFilePath": "/home/runner/work/sh/sh/Sh.Web/Sh.Web.csproj",
+  "projectFilePath": "D:\\Projet C#\\sh\\Sh.Web\\Sh.Web.csproj",
   "expectedPackageFiles": [
-    "/home/runner/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.5/microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512"
+    "C:\\Users\\Ryan\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.0\\microsoft.aspnetcore.app.internal.assets.10.0.0.nupkg.sha512"
   ],
   "logs": []
 }
