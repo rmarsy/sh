@@ -31,6 +31,7 @@ services:
       Turnstile__Enabled: "${TURNSTILE_ENABLED:-false}"
       ApiKey__HeaderName: "X-Api-Key"
       ApiKey__Keys__0: "${API_KEY}"
+      DOTNET_SYSTEM_NET_DISABLEIPV6: "true"
     labels:
       traefik.enable: "true"
       traefik.http.routers.sh-api.rule: "Host(`${API_DOMAIN}`)"

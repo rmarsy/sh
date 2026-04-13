@@ -35,8 +35,10 @@ services:
       Turnstile__Enabled: "false"
       ApiKey__Keys__0: "${API_KEY:-dev-local-api-key}"
     labels:
+      traefik.enable: "true"
       traefik.http.routers.sh-api.entrypoints: "web,websecure"
       traefik.http.routers.sh-api.tls: "true"
+      traefik.http.services.sh-api.loadbalancer.server.port: "8080"
 
   sh-web:
     build:
@@ -49,6 +51,9 @@ services:
       - /src/Sh.Web/obj
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      DOTNET_SYSTEM_NET_DISABLEIPV6: "true"
     labels:
+      traefik.enable: "true"
       traefik.http.routers.sh-web.entrypoints: "web,websecure"
       traefik.http.routers.sh-web.tls: "true"
+      traefik.http.services.sh-web.loadbalancer.server.port: "8080"
